@@ -1,0 +1,66 @@
+Section,Item,Price
+Coffee,LATTE,$4.75(H)/$5.25(C)
+Coffee,CORTADO,$4.25(H)/$4.75(C)
+Coffee,DRIP COFFEE,$3(H)/$3.50(C)/$3.50(H)/$4(H)/$4.25(C)
+Coffee,CAFE AU LAIT,$3.25(H)
+Coffee,CAPPUCINO,$4.50(H)
+Coffee,MOCHA,$5.75(H)/$6.25(C)
+Coffee,RED EYE,$4.50(H)/$4.75(C)
+Coffee,AMERICANO,$3.75(H)/$4.25(C)
+Specialty Drinks,MATCHA LATTE,$5.25(H)/$5.75(C)
+Specialty Drinks,HOT CHOCOLATE,$4.50(H)/$5.50
+Specialty Drinks,"NUTELLA LATTE",$5.75(H)/$6.25(C)
+Specialty Drinks,CHAI,$5.00(H)/$5.50(C)
+Specialty Drinks,"DIRTY CHAI",$6.25(H)/$6.75(C)
+Specialty Drinks,"LAVENDER LATTE",$5.75(H)/$6.25(C)
+Specialty Drinks,"ROSE LATTE",$5.75(H)/$6.25(C)
+Specialty Drinks,"BROWN SUGAR LATTE",$5.75(H)/$6.25(C)
+Specialty Drinks,"BUMBLEBEE LATTE",$6.25(H)/$6.75(C)
+Boba,THE OG,$4.25(M)/$5.25(L)/$5.25(H)
+Boba,"BROWN SUGAR BOBA",$4.75(M)/$5.75(L)/$5.75(H)
+Boba,"TARO BOBA",$4.25(M)/$5.25(L)/$5.25(H)
+Boba,"COCONUT BOBA",$4.25(M)/$5.25(L)/$5.25(H)
+Boba,"FRUIT GREEN/BLACK TEA",$4.25(M)/$5.25(L)
+Boba,"FRUIT BLACK TEA",$4.25(M)/$5.25(L)
+Boba,"JASMINE MILK TEA",$4.25(M)/$5.25(L)/$5.25(H)
+Boba,"WINTERMELON MILK TEA",$4.25(M)/$5.25(L)/$5.25(H)
+Boba,TOPPINGS,+$0.50
+Hot Bites,"CHICKEN POPPERS",$6.00
+Hot Bites,"MOZZ STICKS",$7.00
+Hot Bites,"PIGS IN A BLANKET",$7.00
+Hot Bites,"TATER TOTS",$5.00
+Hot Bites,"CHICKEN TENDERS",$8.00
+Hot Bites,"ONION RINGS",$5.00
+Hot Bites,FRIES,$5.00
+Hot Bites,"SWEET POTATO FRIES",$6.00
+Sandwiches & Salads,"BEYOND BUSSIN SANDWICH",$15.00
+Sandwiches & Salads,"SPICY CHICKEN SANDWICH",$13.00
+Sandwiches & Salads,"ITALIAN PANINI",$11.00
+Sandwiches & Salads,"TUNA MELT",$11.00
+Sandwiches & Salads,"ZESTO CHICKEN SANDWICH",$13.00
+Sandwiches & Salads,"TURKEY CLUB",$11.00
+Sandwiches & Salads,"GRILLED CHEESE",$6.50
+Sandwiches & Salads,"MIXED GREEN SALAD",$6.50
+Sandwiches & Salads,"COBB SALAD",$10.00
+Sandwiches & Salads,"PIZZA PANINI",$11.00
+Sandwiches & Salads,"SMOKED SALMON TARTINE",$11.00
+Sandwiches & Salads,"AVOCADO TOAST",$10.00
+Seasonal Menu,"Pina Colada",$4.75(M)/$5.75(L)
+Seasonal Menu,"MATCHA LEMONADE",$5.00(M)/$6.00(L)
+Seasonal Menu,YUZU-ADE,$5.25(L)
+Seasonal Menu,"FRESHLY SQUEEZED LEMONADE",$4.00(M)/$5.00(L)
+Seasonal Menu,"MATCHA LAVENDER OAT",$6.50
+Seasonal Menu,"Berry Lavender Lemonade",$5.25(M)/$6.25(L)
+Seasonal Menu,"Citrus Boba",$6.00(L)
+Beer & Wine,"Babe Rose",
+Beer & Wine,"Archer Roose White/Red",
+Beer & Wine,"Kona Lager",
+Beer & Wine,"Blue Point",
+Beer & Wine,Juneshine,
+Beer & Wine,"Lunar Hard Seltzers",
+Beer & Wine,"Allagash White",
+Beer & Wine,"Doc Cider",
+Beer & Wine,"Stella Artois",
+Beer & Wine,Shocktop,
+Beer & Wine,Finback,
+Beer & Wine,"Three's Brewery"

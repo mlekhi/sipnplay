@@ -1,15 +1,32 @@
 .footer {
-    border-top: 1px solid #dadada;
-    height: 30px; /* Adjust height as needed */
-    padding: 5px;
-    margin: 0 5px;
-    display: flex;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    align-items: center;
-    justify-content: center;
+  border-top: 1px solid #dadada;
+  padding: 15px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* Ensure columns are in a row */
+}
+
+.column {
+  flex: 1;
+  /* Each column should take up equal space */
+  padding: 0 10px;
+}
+
+.column p {
+  font-size: 10pt;
+}
+
+.column a {
+  font-size: 10pt;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
   }
-  
-  .footer p {
-    font-size: 12pt;
-  }
+}

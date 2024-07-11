@@ -1,0 +1,374 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 4291,
+      "max": [
+        0.09299000352621078,
+        0.05852999910712242,
+        0.0749799981713295
+      ],
+      "min": [
+        -0.05852999910712242,
+        -0.05852999910712242,
+        -0.0746299996972084
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 51492,
+      "componentType": 5126,
+      "count": 4291,
+      "max": [
+        0.999993622303009,
+        0.9999815821647644,
+        0.9999999403953552
+      ],
+      "min": [
+        -0.9999851584434509,
+        -0.9999815821647644,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 25536,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 102984,
+      "componentType": 5126,
+      "count": 609,
+      "max": [
+        0.049710001796483994,
+        0.049710001796483994,
+        0.03864999860525131
+      ],
+      "min": [
+        -0.049710001796483994,
+        -0.049710001796483994,
+        0.031530000269412994
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 110292,
+      "componentType": 5126,
+      "count": 609,
+      "max": [
+        0.9991797804832458,
+        0.9991797804832458,
+        1.0
+      ],
+      "min": [
+        -0.9991797804832458,
+        -0.9991797804832458,
+        0.03954998776316643
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 102144,
+      "componentType": 5125,
+      "count": 3456,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 117600,
+      "componentType": 5126,
+      "count": 609,
+      "max": [
+        0.04992999881505966,
+        0.04992999881505966,
+        0.03245000168681145
+      ],
+      "min": [
+        -0.04992999881505966,
+        -0.04992999881505966,
+        -0.061569999903440475
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 124908,
+      "componentType": 5126,
+      "count": 609,
+      "max": [
+        0.9999621510505676,
+        0.9999621510505676,
+        1.0
+      ],
+      "min": [
+        -0.9999621510505676,
+        -0.9999621510505676,
+        0.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 115968,
+      "componentType": 5125,
+      "count": 3456,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Kabj (https://sketchfab.com/kai-raiser)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/beer-mug-1b06e0d22e484db08e2dadf4b8751487",
+      "title": "Beer mug"
+    },
+    "generator": "Sketchfab-12.66.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 129792,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 132216,
+      "byteOffset": 129792,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 262008,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "extensionsUsed": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0.5190939003045922,
+            0.1381362979158492,
+            0.0031651423634007476,
+            1.0
+          ],
+          "glossinessFactor": 1.0,
+          "specularFactor": [
+            0.7283795448665624,
+            0.4648212723509638,
+            0.1555712216980437
+          ]
+        }
+      },
+      "name": "Bier"
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            0.25
+          ],
+          "glossinessFactor": 1.0,
+          "specularFactor": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "name": "Bierkrug"
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0.5190939003045922,
+            0.42572111603466894,
+            0.2938274473886956,
+            0.94
+          ],
+          "glossinessFactor": 0.94,
+          "specularFactor": [
+            0.6319701880711238,
+            0.5480705453246997,
+            0.41569309325613285
+          ]
+        }
+      },
+      "name": "Schaum"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Bierkrug_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Bierkrug_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Bier_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        5
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        3,
+        4
+      ],
+      "matrix": [
+        -0.93088,
+        0.36533000000000004,
+        0.0,
+        0.0,
+        -0.36533000000000004,
+        -0.93088,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -0.009080000000000003,
+        0.006510000000000002,
+        0.07409000000000002,
+        1.0
+      ],
+      "name": "Bierkrug"
+    },
+    {
+      "mesh": 0,
+      "name": "Bierkrug_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Bierkrug_1"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        -0.93088,
+        0.36533000000000004,
+        0.0,
+        0.0,
+        -0.36533000000000004,
+        -0.93088,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -0.009080000000000003,
+        0.006510000000000002,
+        0.07409000000000002,
+        1.0
+      ],
+      "name": "Bier"
+    },
+    {
+      "mesh": 2,
+      "name": "Bier_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

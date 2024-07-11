@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Examples from "../../components/Canvas/Examples";
 
 function Landing() {
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <p>text</p>
+      <Examples />
     </div>
   );
 }

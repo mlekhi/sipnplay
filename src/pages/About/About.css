@@ -1,0 +1,36 @@
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover {
+    transform: scale(1.1);
+    /* Increase size on hover */
+    z-index: 1;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.legend {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+.carousel-item:hover .legend {
+    opacity: 1;
+    /* Show legend on hover */
+}

@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  background-color: #4D8D44;
+  color: white;
+  font-weight: 600;
+  border: none;
+  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 5pt;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+input {
+  transition: transform 0.3s ease;
+  padding: 5px;
+  border-radius: 5pt;
+  background-color: #e1e1e1;
+  border: none;
+  width: fill;
+}
+
+a {
+  font-size: 12pt;
+  text-decoration: none;
+  color: #4D8D44;
+  font-weight: 700;
+}
+
+p {
+  color: #555555;
+  font-size: 14pt;
+}
+
+h1 {
+  font-size: 30pt;
+}
+
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  color: #555555;
+  font-size: 13pt;
+  text-align: left;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  padding: 10vw;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
+.App-header2 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+@media (max-width: 768px) {
+  .App-header2 {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}

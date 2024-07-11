@@ -4,6 +4,7 @@ import Menu from "./pages/Menu/Menu.js";
 import Events from "./pages/Events/Events.js";
 import About from "./pages/About/About.js";
 import Landing from "./pages/Landing/Landing.js";
+import Games from "./pages/Games/Games.js";
 import Nav from "./components/Nav/Nav.js";
 import Footer from "./components/Footer/Footer.js";
 
@@ -12,12 +13,13 @@ function App() {
     <Router>
       <div className="body">
         <Nav />
-        <div className="viewer">
+        <div>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/events" element={<Events />} />
             <Route path="/about" element={<About />} />
+            <Route path="/games" element={<Games />} />
           </Routes>
         </div>
         <Footer />

@@ -1,0 +1,51 @@
+.menu {
+    height: 30px;
+    /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #dadada;
+    justify-content: space-between;
+}
+
+.menu-item {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.1);
+    /* Scale up on hover */
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left p {
+    font-weight: 600;
+    font-size: 12pt;
+}
+
+.right {
+    display: flex;
+}
+
+.login-button {
+    color: black;
+    font-weight: 600;
+    border: none;
+    transition: transform 0.3s ease;
+    padding: 4px;
+    border-radius: 5pt;
+}
+
+.login-button a {
+    color: white;
+    font-size: 10pt;
+}

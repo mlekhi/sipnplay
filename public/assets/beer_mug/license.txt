@@ -1,0 +1,11 @@
+Model Information:
+* title:	Beer mug
+* source:	https://sketchfab.com/3d-models/beer-mug-1b06e0d22e484db08e2dadf4b8751487
+* author:	Kabj (https://sketchfab.com/kai-raiser)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Beer mug" (https://sketchfab.com/3d-models/beer-mug-1b06e0d22e484db08e2dadf4b8751487) by Kabj (https://sketchfab.com/kai-raiser) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

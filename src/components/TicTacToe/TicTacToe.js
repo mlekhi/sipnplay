@@ -78,16 +78,16 @@ const TicTacToe = () => {
 
   return (
     <>
-      <div className="flex flex-col mx-auto">
+      <div className="flex flex-col mx-auto ">
         <div className="text-lg">{status}</div>
-        <div className="grid grid-cols-3 gap-2 bg-[#DEE9D3] border-none">
+        <div className="grid grid-cols-3 gap-2 bg-[#DEE9D3] ">
           {Array.from({ length: 9 }).map((_, index) => (
             <div key={index}>
               {board[index] === "X" ? (
                 <img
                   alt="TicTacToe square"
                   src={X}
-                  className="w-32 h-32 border bg-white text-2xl font-bold focus:outline-none"
+                  className="w-32 h-32 bg-white "
                   value={index}
                   key={index}
                 />
@@ -95,23 +95,26 @@ const TicTacToe = () => {
                 <img
                   alt="TicTacToe square"
                   src={O}
-                  className="w-32 h-32 border bg-white text-2xl font-bold focus:outline-none"
+                  className="w-32 h-32  bg-white "
                   value={index}
                   key={index}
                 />
               ) : (
                 <div
                   alt="TicTacToe square"
-                  className="w-32 h-32 border bg-white  text-2xl font-bold focus:outline-none"
+                  className="w-32 h-32  bg-white  text-2xl font-bold "
                   key={index}>
                   {isXTurn ? (
                     <button
-                      className="w-full h-full bg-white"
+                      className="w-full h-full bg-white hover:bg-[#DEE9D3] rounded-none hover:scale-100"
                       value={index}
                       key={index}
                       onClick={() => handleClick(index)}></button>
                   ) : (
-                    <button className="w-full h-full bg-white" key={index} value={index}></button>
+                    <button
+                      className="w-full h-full bg-white  hover:bg-[#DEE9D3] rounded-none hover:scale-100"
+                      key={index}
+                      value={index}></button>
                   )}
                 </div>
               )}

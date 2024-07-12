@@ -20,6 +20,7 @@ const AboutGoogleMap = () => {
           <Marker position={center} />
         </GoogleMap>
       </LoadScript>
+      <div className="my-2 h-[40px]"></div>
     </>
   );
 };

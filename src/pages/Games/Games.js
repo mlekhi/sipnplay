@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse"; // Import Papaparse library
 import GalleryItem from "./GalleryItem"; // Assuming GalleryItem component is defined
-import csvFile from "./boardgames.csv"; // Import CSV file path
+import csvFile from "./bgamepics.csv"; // Import CSV file path
 
 const Gallery = () => {
   const [items, setItems] = useState([]);
@@ -12,11 +12,11 @@ const Gallery = () => {
   const filterItems = () => {
     let filtered = items.filter(
       (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        item[0].toLowerCase().includes(searchQuery.toLowerCase()) &&
         (selectedTags.length === 0 ||
           selectedTags.every((tag) => item.tags.includes(tag)))
     );
-    setFilteredItems(filtered);
+    setFilteredItems(filtered.length > 0 ? filtered : items); // Set to all items if no filters are applied
   };
 
   useEffect(() => {
@@ -32,6 +32,7 @@ const Gallery = () => {
           skipEmptyLines: true,
         });
         setItems(result.data); // Set parsed CSV data to state
+        console.log(result.data);
       } catch (error) {
         console.error("Error fetching CSV data:", error);
       }
@@ -55,7 +56,7 @@ const Gallery = () => {
           onChange={handleSearchChange}
           placeholder="Search..."
         />
-        {items.map((item) => (
+        {filteredItems.map((item) => (
           <GalleryItem key={item.id} item={item} />
         ))}
       </div>

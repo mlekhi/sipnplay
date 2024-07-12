@@ -46,7 +46,12 @@ const Menu = () => {
 
   return (
     <div className="App-header">
-      <img alt="Menu text" src="headers/menu.png" className="pointer-events-none" />
+      <img
+        fetchpriority="high"
+        alt="Menu text"
+        src="headers/menu.png"
+        className="pointer-events-none"
+      />
       <div className="menu-boba">
         <Boba />
       </div>

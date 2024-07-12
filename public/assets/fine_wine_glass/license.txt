@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fine Wine Glass
+* source:	https://sketchfab.com/3d-models/fine-wine-glass-55305f6a763d47b6b8c6a5896eed98c7
+* author:	Allison Simonette (https://sketchfab.com/allisonsimonette)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fine Wine Glass" (https://sketchfab.com/3d-models/fine-wine-glass-55305f6a763d47b6b8c6a5896eed98c7) by Allison Simonette (https://sketchfab.com/allisonsimonette) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

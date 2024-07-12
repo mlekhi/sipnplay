@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wine Glass
+* source:	https://sketchfab.com/3d-models/wine-glass-be365d4a32184764abc4634c1280e6da
+* author:	Simon T Griffiths (https://sketchfab.com/RubberMan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wine Glass" (https://sketchfab.com/3d-models/wine-glass-be365d4a32184764abc4634c1280e6da) by Simon T Griffiths (https://sketchfab.com/RubberMan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

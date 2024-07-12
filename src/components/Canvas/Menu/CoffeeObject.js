@@ -1,66 +1,64 @@
 import * as THREE from "three";
 import { useState, useRef, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Center } from "@react-three/drei";
+import { useGLTF, Center } from "@react-three/drei";
 
-// Function to center the model within the scene
 const centerModel = (model, scene) => {
   const box = new THREE.Box3().setFromObject(scene);
   const center = box.getCenter(new THREE.Vector3());
 
-  // Center the model
+  // center model using THREE
   scene.position.set(-center.x, -center.y, -center.z);
 };
 
-// Component for rendering a specific coffee object model
+// Specific coffee object component for unique model
 const CoffeeObject = ({ path, rotate, scale }) => {
-  const { scene } = useGLTF(path); // Load GLTF model
-  const [hovered, setHovered] = useState(false); // State for hover interaction
-  const [rotated, setRotated] = useState(false); // State for rotation animation
-  const modelRef = useRef(); // Reference to the model object in the scene
-  const { invalidate } = useThree(); // Three.js context for rendering
+  const { scene } = useGLTF(path);
+  const [hovered, setHovered] = useState(false);
+  const [rotated, setRotated] = useState(false);
+  const modelRef = useRef();
+  const { invalidate } = useThree();
 
-  // Center the model when scene is loaded or updated
+  // call the centerModel function on load
   useEffect(() => {
     if (modelRef.current) {
       centerModel(modelRef.current, scene);
     }
   }, [scene]);
 
-  // Update rotation and scale when props change
+  // set position of model to level of rotation or scale if exists
   useEffect(() => {
     if (modelRef.current) {
       modelRef.current.rotation.set(...rotate);
       modelRef.current.scale.set(scale, scale, scale);
-      invalidate(); // Invalidate frame to trigger re-render
+      invalidate();
     }
   }, [rotate, scale, invalidate]);
 
-  // Frame update for animation and interaction
+  // logic to spin the model by modifying rotation, a full circle is 2 * pi
   useFrame(() => {
     if (hovered && !rotated) {
-      // Example animation logic (rotate around z-axis)
       modelRef.current.rotation.z += 0.1;
       if (modelRef.current.rotation.z >= Math.PI * 2) {
         setRotated(true);
-        modelRef.current.rotation.z = 0; // Reset rotation on full circle
+        modelRef.current.rotation.z = 0;
       }
-      invalidate(); // Invalidate frame to trigger re-render
+      invalidate();
     }
   });
 
-  // Handle pointer events
+  // functions to handle hovering over a model
   const handlePointerOver = () => {
-    setHovered(true); // Set hovered state to true
-    setRotated(false); // Reset rotated state
-    invalidate(); // Invalidate frame to trigger re-render
+    setHovered(true);
+    setRotated(false);
+    invalidate();
   };
 
   const handlePointerOut = () => {
     if (rotated) {
-      setHovered(false); // Reset hovered state only if rotated
+      setHovered(false);
     }
-    invalidate(); // Invalidate frame to trigger re-render
+    invalidate();
   };
 
   return (

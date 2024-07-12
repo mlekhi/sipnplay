@@ -62,13 +62,9 @@ const Menu = () => {
                     <ObjectCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
-                      scale={20}
                     />
                   ) : (
-                    <ObjectCanvas
-                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
-                      scale={20}
-                    />
+                    <ObjectCanvas path={sectionModels[section] || "/assets/boba/scene.gltf"} />
                   )}
                 </div>
               </div>

@@ -122,10 +122,10 @@ const Gallery = () => {
       </div>
       {/* Dice components */}
       <div className="dice1">
-        <Dice /> {/* Render Dice component */}
+        <Dice rotate={[1, 2, 1]} /> {/* Render Dice component */}
       </div>
       <div className="dice2">
-        <Dice /> {/* Render Dice component */}
+        <Dice rotate={[0, 0, 1]} /> {/* Render Dice component */}
       </div>
     </div>
   );

@@ -54,8 +54,8 @@ const Menu = () => {
               {section}
             </h2>
             <div className="flex flex-col items-start relative w-full mb-8">
-              <div className="shadow-inner md:w-[85%] lg:w-[90%] bg-[#DEE9D3] p-5 pl-10 rounded-l-[50px] pr-[100px] h-[220px]">
-                <div className="grid grid-cols-3 gap-4">
+              <div className="shadow-inner md:w-[85%] lg:w-[91%] bg-[#DEE9D3] p-3 pl-10 rounded-l-[50px] pr-[100px] h-[220px]">
+                <div className="grid grid-cols-3 gap-2">
                   {items.map((menuItem) => (
                     <MenuItem key={menuItem.id} item={menuItem} />
                   ))}

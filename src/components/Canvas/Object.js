@@ -1,11 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF, Center } from "@react-three/drei";
 
 const Object = ({ path, rotate, scale }) => {
   const { scene } = useGLTF(path);
-  const [hovered, setHovered] = useState(false);
-  const [rotated, setRotated] = useState(false);
   const modelRef = useRef();
   const { invalidate } = useThree();
 
@@ -24,31 +22,17 @@ const Object = ({ path, rotate, scale }) => {
         setRotated(true);
         modelRef.current.rotation.y = 0;
       }
-      invalidate();
+      if (modelRef.current) {
+        modelRef.current.rotation.y += 0.01; // Adjust rotation speed here
+        invalidate();
+      }
     }
   });
 
-  const handlePointerOver = () => {
-    setHovered(true);
-    setRotated(false);
-    invalidate();
-  };
-
-  const handlePointerOut = () => {
-    if (rotated) {
-      setHovered(false);
-    }
-    invalidate();
-  };
-
   return (
     <Center>
-      <group
-        ref={modelRef}
-        scale={scale}
-        rotation={rotate}
-        onPointerOver={handlePointerOver}
-        onPointerOut={handlePointerOut}>
+      <group ref={modelRef} scale={scale} rotation={rotate}>
+      <group ref={modelRef} scale={scale} rotation={rotate}>
         <primitive object={scene.clone()} />
       </group>
     </Center>

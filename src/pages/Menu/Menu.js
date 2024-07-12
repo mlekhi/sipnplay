@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import MenuItem from "./MenuItem";
 import "./Menu.css";
 import Papa from "papaparse";
+<<<<<<< Updated upstream
 import ObjectCanvas from "../../components/Canvas/ObjectCanvas";
+=======
+>>>>>>> Stashed changes
+import Boba from "../../components/Canvas/Boba";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -42,13 +46,20 @@ const Menu = () => {
 
   return (
     <div className="App-header">
+<<<<<<< Updated upstream
       {/* big letter font */}
+      <Boba />
       <h1 className="menu-title">Menu</h1>
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
           <>
-            <h2 className="text-fuchsia-500 text-3xl mb-2 self-start">{section}</h2>
-            <div key={section} className="flex flex-col items-start relative w-full mb-8">
+            <h2 className="text-fuchsia-500 text-3xl mb-2 self-start">
+              {section}
+            </h2>
+            <div
+              key={section}
+              className="flex flex-col items-start relative w-full mb-8"
+            >
               <div className="shadow-inner md:w-[85%] lg:w-[90%] bg-[#DEE9D3] p-5 pl-10 rounded-l-[50px] pr-[100px] h-[220px]">
                 <div className="grid grid-cols-3 gap-4">
                   {items.map((menuItem) => (
@@ -64,7 +75,9 @@ const Menu = () => {
                       rotate={[-Math.PI / 2, 0, 0]}
                     />
                   ) : (
-                    <ObjectCanvas path={sectionModels[section] || "/assets/boba/scene.gltf"} />
+                    <ObjectCanvas
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
                   )}
                 </div>
               </div>
@@ -74,6 +87,19 @@ const Menu = () => {
       ) : (
         <p>Loading...</p>
       )}
+=======
+      <Boba />
+      <h1 className="menu-title">Restaurant Menu</h1>
+      <div className="menu-items">
+        {menuItems.length > 0 ? (
+          menuItems.map((menuItem) => (
+            <MenuItem key={menuItem.id} item={menuItem} />
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+>>>>>>> Stashed changes
     </div>
   );
 };

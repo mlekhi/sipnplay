@@ -1,12 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('./fonts/fonts.css');
 
 body {
   margin: 0;
   font-family: Inter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: 'PurpleFont', sans-serif;
+  font-size: 100px;
+  letter-spacing: 10px;
+  background: linear-gradient(to bottom, #44ff33, #0d5d96);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background-size: 120%;
 }
 
 code {
@@ -48,11 +58,6 @@ p {
   font-size: 14pt;
 }
 
-h1 {
-  font-size: 30pt;
-}
-
-
 ul {
   padding: 0;
   margin: 0;
@@ -85,8 +90,10 @@ li {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: calc(10px + 2vmin);
-  color: black;
+  background-color: #DEE9D3;
   padding-left: 10vw;
   padding-right: 10vw;
 }

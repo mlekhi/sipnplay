@@ -23,6 +23,7 @@ function Nav() {
           <a href="/menu">Menu</a>
           <a href="/events">Events</a>
           <a href="/games">Games</a>
+          <a href="https://www.exploretock.com/sipnplay">Reservations</a>
         </div>
 
         {/* Show collapsible menu icon on smaller screens */}

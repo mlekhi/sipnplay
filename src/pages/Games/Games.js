@@ -47,7 +47,7 @@ const Gallery = () => {
 
   return (
     <div className="App-header">
-      <h2>Games Catalogue</h2>
+      <h1>Games Catalogue</h1>
       <div className="gallery">
         <input
           type="text"

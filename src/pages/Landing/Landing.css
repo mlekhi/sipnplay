@@ -1,0 +1,29 @@
+/* Landing.css */
+.dice {
+    position: absolute;
+    top:0px;
+}
+
+.dice> :nth-child(1) {
+    position: absolute;
+    top: 100px;
+    right: 400px;
+}
+
+.dice> :nth-child(2) {
+    position: absolute;
+    top: 50px;
+    left: 150px;
+}
+
+.dice> :nth-child(3) {
+    position: absolute;
+    top: 400px;
+    left: 10px;
+}
+
+.dice> :nth-child(4) {
+    position: absolute;
+    top: 350px;
+    left: 350px;
+}

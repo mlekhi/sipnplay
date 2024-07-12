@@ -5,7 +5,8 @@ import { OrbitControls } from "@react-three/drei";
 import CanvasLoader from "./Loader";
 import Object from "./Object";
 
-const CameraAdjuster = () => {
+const CameraAdjuster = ({ scale }) => {
+const CameraAdjuster = ({ scale }) => {
   const { camera, scene } = useThree();
 
   useEffect(() => {
@@ -17,12 +18,12 @@ const CameraAdjuster = () => {
     const fov = camera.fov * (Math.PI / 180);
     let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
 
-    cameraZ *= 1.5; // Zoom out a little so object fits comfortably
+    cameraZ *= scale; // Zoom out a little so object fits comfortably
 
     // Move the camera up and back
     camera.position.set(
       center.x,
-      center.y + cameraZ * 0.5, // Move up by half the cameraZ distance
+      center.y + cameraZ / 10, // Move up by half the cameraZ distance
       center.z + cameraZ
     );
 
@@ -34,16 +35,42 @@ const CameraAdjuster = () => {
   return null;
 };
 
-const ObjectCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
+const ObjectCanvas = ({
+  path,
+  rotate = [0, 0, 0],
+  scale = 1,
+  auto_camera = true,
+}) => {
   return (
     <div style={{ width: "200px", height: "200px" }}>
       <Canvas frameloop="demand">
-        <ambientLight intensity={1} />
-        <directionalLight position={[2, 2, 2]} intensity={2} />
+        <ambientLight intensity={0.2} />
+        <directionalLight
+          position={[5, 10, 5]}
+          intensity={1}
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
+        <pointLight position={[0, 0, -5]} intensity={10} />
+        <ambientLight intensity={0.2} />
+        <directionalLight
+          position={[5, 10, 5]}
+          intensity={1}
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
+        <pointLight position={[0, 0, -5]} intensity={10} />
         <Suspense fallback={<CanvasLoader />}>
           <Object path={path} rotate={rotate} scale={scale} />
           {auto_camera && <CameraAdjuster />}
-          <OrbitControls makeDefault enablePan={false} enableZoom={false} enableRotate={false} />
+          <OrbitControls
+            makeDefault
+            enablePan={false}
+            enableZoom={false}
+            enableRotate={false}
+          />
         </Suspense>
       </Canvas>
     </div>

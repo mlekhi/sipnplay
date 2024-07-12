@@ -1,6 +1,6 @@
 import React from "react";
 import { Html, useProgress } from "@react-three/drei";
-import CircularProgress from "@mui/material/CircularProgress";
+// import CircularProgress from "@mui/material/CircularProgress";
 
 const CanvasLoader = () => {
   const { progress } = useProgress();

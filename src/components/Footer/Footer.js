@@ -11,7 +11,7 @@ function Footer() {
           <h3>Sip & Play</h3> <br />
           <a href="https://www.instagram.com/sipnplaynyc/">
             <img
-              alt="instagram logo"
+              alt="instagram icon with reference to sipnplaynyc"
               src="insta.png"
               style={{ width: "30px", height: "30px" }}
             ></img>

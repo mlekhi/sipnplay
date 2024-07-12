@@ -1,9 +1,8 @@
 import * as THREE from "three";
-import { Suspense, useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import CanvasLoader from "../Loader";
-import MenuCoffee from "./MenuCoffee";
+import CoffeeObject from "./CoffeeObject";
 
 const CameraAdjuster = () => {
   const { camera, scene } = useThree();
@@ -26,9 +25,9 @@ const CameraAdjuster = () => {
     // camera.position.set(-center.x, size.y / 2 - center.y, -center.z + cameraZ);
 
     camera.position.set(
-      center.x - cameraZ * 0.2,
-      center.y + cameraZ * 0.3, // Move up by half the cameraZ distance
-      center.z + cameraZ * 0.2
+      center.x - cameraZ * 0.09,
+      center.y + cameraZ * 0.1, // Move up by half the cameraZ distance
+      center.z + cameraZ * 0.15
     );
 
     // camera.lookAt(-center.x, -center.y, -center.z);
@@ -40,20 +39,18 @@ const CameraAdjuster = () => {
   return null;
 };
 
-const CustomCanvas = ({ path, rotate = [0, 0, 0], scale = 1 }) => {
+const CoffeeCanvas = ({ path, rotate = [0, 0, 0], scale = 1 }) => {
   return (
     <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]">
       <Canvas frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[2, 2, 2]} intensity={1} />
-        <Suspense fallback={<CanvasLoader />}>
-          <MenuCoffee path={path} rotate={rotate} scale={scale} />
-          <CameraAdjuster />
-          <OrbitControls makeDefault enablePan={false} enableZoom={false} enableRotate={false} />
-        </Suspense>
+        <CoffeeObject path={path} rotate={rotate} scale={scale} />
+        <CameraAdjuster />
+        <OrbitControls makeDefault enablePan={false} enableZoom={false} enableRotate={false} />
       </Canvas>
     </div>
   );
 };
 
-export default CustomCanvas;
+export default CoffeeCanvas;

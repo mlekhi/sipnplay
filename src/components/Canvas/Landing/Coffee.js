@@ -1,10 +1,10 @@
 import React from "react";
-import CustomCanvas from "./CoffeeCanvas";
+import CoffeeCanvas from "./CoffeeCanvas";
 
 const Coffee = () => {
   return (
     <>
-      <CustomCanvas
+      <CoffeeCanvas
         path="/assets/cafe_latte_with_art/scene.gltf"
         scale={0.5}
         height="500px"

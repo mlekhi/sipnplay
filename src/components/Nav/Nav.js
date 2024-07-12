@@ -31,7 +31,9 @@ function Nav() {
           <a href="/games" className="links">
             Games
           </a>
-          <a href="https://www.exploretock.com/sipnplay">Reservations</a>
+          <a href="https://www.exploretock.com/sipnplay" className="links">
+            Make a Reservation
+          </a>
         </div>
 
         {/* Show collapsible menu icon on smaller screens */}

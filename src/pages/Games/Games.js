@@ -22,12 +22,15 @@ const Gallery = () => {
   }, []);
 
   const filterItems = () => {
-    let filtered = items.filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        (selectedTags.length === 0 ||
-          selectedTags.every((tag) => item.tags.includes(tag)))
-    );
+    let filtered = items.filter((item) => {
+      const title = item.title.toLowerCase();
+      return searchQuery
+        ? title.includes(searchQuery.toLowerCase()) &&
+            (selectedTags.length === 0 ||
+              selectedTags.every((tag) => item.label && item.label.includes(tag)))
+        : selectedTags.length === 0 ||
+            selectedTags.every((tag) => item.label && item.label.includes(tag));
+    });
     setFilteredItems(filtered);
   };
 
@@ -62,29 +65,28 @@ const Gallery = () => {
   return (
     <div className="App-header">
       <h1>Games Catalogue</h1>
-      <div className="filter-options">
+      <div className="filter-options flex-row items-baseline w-full justify-around">
         <div className="search-bar">
           <input
+            className="self-center p-2"
             type="text"
             value={searchQuery}
             onChange={handleSearchChange}
             placeholder="Search..."
           />
           {searchQuery && (
-            <button className="clear-button" onClick={clearSearch}>
+            <button className="clear-button ml-2" onClick={clearSearch}>
               <FaTimes />
             </button>
           )}
         </div>
-        <div className="filter-options">
+        <div className="filter-options flex-row">
           {uniqueLabels.map((label) => (
             <button
               key={label}
-              className={`filter-button ${
-                selectedTags.includes(label) ? "active" : ""
-              }`}
-              onClick={() => handleTagClick(label)}
-            >
+              value={label}
+              className={`filter-button p-2 ${selectedTags.includes(label) ? "active" : ""}`}
+              onClick={(e) => handleTagClick(e)}>
               {label}
             </button>
           ))}
@@ -92,7 +94,7 @@ const Gallery = () => {
       </div>
       <div className="gallery">
         {filteredItems.map((item) => (
-          <GalleryItem key={item.id} item={item} />
+          <GalleryItem key={item.title} item={item} />
         ))}
       </div>
     </div>

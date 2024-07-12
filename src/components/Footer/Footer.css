@@ -11,6 +11,7 @@
 
 .column {
   flex: 1;
+  width: 33%;
   /* Each column should take up equal space */
   padding: 0 10px;
 }
@@ -24,9 +25,21 @@
   display: block;
 }
 
+.footer-instagram {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
+    text-align: center;
     height: auto;
+  }
+  .footer-instagram {
+    justify-content: center;
+  }
+  .column {
+    width: 100%;
   }
 }

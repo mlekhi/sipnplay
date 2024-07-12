@@ -3,8 +3,8 @@ import MenuItem from "./MenuItem";
 import "./Menu.css";
 import Papa from "papaparse";
 import MenuCanvas from "../../components/Canvas/Menu/MenuCanvas";
-import CustomCanvas from "../../components/Canvas/Menu/CustomCanvas";
-import Boba from "../../components/Canvas/Boba";
+import CoffeeCanvas from "../../components/Canvas/Menu/CoffeeCanvas";
+import Boba from "../../components/Canvas/Menu/Boba";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -45,8 +45,8 @@ const Menu = () => {
   return (
     <div className="App-header">
       {/* big letter font */}
-      <Boba />
       <h1 className="menu-title">Menu</h1>
+      <Boba />
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
           <div key={section} className="w-full">
@@ -62,7 +62,7 @@ const Menu = () => {
               <div className="absolute self-center justify-center md:right-[3%] lg:right-[2%] w-[220px] h-[220px] rounded-full bg-[#DEE9D3] pt-2 ">
                 <div className="bg-white w-[95%] h-[95%] rounded-full overflow-hidden shadow-lg">
                   {section === "Coffee" ? (
-                    <CustomCanvas
+                    <CoffeeCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
                       auto_camera={true}
@@ -83,7 +83,7 @@ const Menu = () => {
               <div className="shadow-inner self-center w-[80%] bg-[#DEE9D3] p-6 rounded-[50px] ">
                 <div className="text-center bg-white w-fit rounded-full overflow-hidden shadow-lg mx-auto">
                   {section === "Coffee" ? (
-                    <CustomCanvas
+                    <CoffeeCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
                       auto_camera={true}

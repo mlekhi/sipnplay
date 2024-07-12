@@ -2,3 +2,8 @@
     transform: rotate(-10deg);
     pointer-events: auto;
 }
+
+.slanted2 {
+    transform: rotate(20deg);
+    pointer-events: auto;
+}

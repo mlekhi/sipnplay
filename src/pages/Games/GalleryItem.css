@@ -28,13 +28,16 @@
 .gallery-item h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  font-size: 14pt;
+  font-weight: 600;
 }
 
 .gallery-item p {
   background-color: #8ba668;
-  color: black;
+    font-weight: 600;
+  color: white;
   border-radius: 100px;
-  padding: 2px;
+  padding: 6px 2px;
   position: relative;
   margin-top: 10px;
   text-align: center;

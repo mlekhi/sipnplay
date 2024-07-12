@@ -3,6 +3,7 @@ import MenuItem from "./MenuItem";
 import "./Menu.css";
 import Papa from "papaparse";
 import MenuCanvas from "../../components/Canvas/Menu/MenuCanvas";
+import MenuFrontCanvas from "../../components/Canvas/Menu/MenuFrontCanvas";
 import CoffeeCanvas from "../../components/Canvas/Menu/CoffeeCanvas";
 import Boba from "../../components/Canvas/Menu/Boba";
 
@@ -13,6 +14,7 @@ const Menu = () => {
     fetchMenuItems();
   }, []);
 
+  // function to grab data stored in csv file
   const fetchMenuItems = async () => {
     try {
       const path = process.env.PUBLIC_URL + "/Items/menu.csv";
@@ -44,14 +46,15 @@ const Menu = () => {
 
   return (
     <div className="App-header">
-      <img src="headers/menu.png" />
-      <Boba />
+      <img alt="Menu text" src="headers/menu.png" className="pointer-events-none" />
+      <div className="menu-boba">
+        <Boba />
+      </div>
+      {/* map out sections, and then each item */}
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
           <div key={section} className="w-full">
-            <h2 className="font-semibold text-3xl mb-2 self-start hidden md:flex">
-              {section}
-            </h2>
+            <h2 className="font-semibold text-3xl mb-2 self-start hidden md:flex">{section}</h2>
             <div className=" flex-col items-start relative w-full mb-8 hidden md:flex">
               <div className="shadow-inner md:w-[85%] lg:w-[90%] bg-[#DEE9D3] p-3 pl-10 rounded-l-[50px] pr-[100px] h-[220px]">
                 <div className="grid grid-cols-3 gap-2">
@@ -66,8 +69,27 @@ const Menu = () => {
                     <CoffeeCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
-                      auto_camera={true}
                       scale={2}
+                    />
+                  ) : section === "Seasonal Menu" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Boba" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Hot Bites" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Sandwiches & Salads" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
                     />
                   ) : (
                     <MenuCanvas
@@ -79,9 +101,7 @@ const Menu = () => {
               </div>
             </div>
             {/* mobile styling here */}
-            <h2 className="text-fuchsia-500 text-xl mb-2 self-start md:hidden">
-              {section}
-            </h2>
+            <h2 className="text-fuchsia-500 text-xl mb-2 self-start md:hidden">{section}</h2>
             <div className="flex flex-col items-start relative w-full h-full mb-8 md:hidden">
               <div className="shadow-inner self-center w-[80%] bg-[#DEE9D3] p-6 rounded-[50px] ">
                 <div className="text-center bg-white w-fit rounded-full overflow-hidden shadow-lg mx-auto">
@@ -89,8 +109,27 @@ const Menu = () => {
                     <CoffeeCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
-                      auto_camera={true}
                       scale={2}
+                    />
+                  ) : section === "Seasonal Menu" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Boba" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Hot Bites" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Sandwiches & Salads" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
                     />
                   ) : (
                     <MenuCanvas

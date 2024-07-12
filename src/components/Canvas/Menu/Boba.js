@@ -1,6 +1,7 @@
 import React from "react";
 import MenuCanvas from "./MenuCanvas";
 
+// Specific boba component outside of the main menu sections
 const Boba = () => {
   return (
     <>

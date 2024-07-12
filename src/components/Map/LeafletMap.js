@@ -1,8 +1,9 @@
+// Imports necessary components and libraries for creating a Leaflet map
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
-// Fix for default marker icon issue
+// Fix for default marker icon issue in Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -18,19 +19,26 @@ const googleURL =
 const LeafletMap = () => {
   return (
     <>
+      {/* Header indicating the purpose of the map */}
       <div className="text-lg mb-2">Find us here!</div>
+      {/* Container with fixed height for the map */}
       <div className="h-[400px]">
+        {/* MapContainer component from react-leaflet, specifying center, zoom, and style */}
         <MapContainer
           center={center}
           zoom={15}
           style={{ height: "400px", width: "400px" }}
         >
+          {/* TileLayer component for rendering map tiles from OpenStreetMap */}
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
+          {/* Marker component to display a marker at the specified position */}
           <Marker position={center}>
+            {/* Popup component for displaying additional information when marker is clicked */}
             <Popup>
+              {/* Content inside the Popup, showing the address and a link to Google Maps */}
               <div className="flex flex-col items-center">
                 <div>471 5th Ave. Brooklyn, NY 11215</div>
                 <a
@@ -46,6 +54,7 @@ const LeafletMap = () => {
           </Marker>
         </MapContainer>
       </div>
+      {/* Empty div for spacing */}
       <div className="my-2 h-[40px]"></div>
     </>
   );

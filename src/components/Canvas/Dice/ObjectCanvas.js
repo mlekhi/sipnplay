@@ -1,11 +1,11 @@
 import * as THREE from "three";
-import { Suspense, useEffect } from "react";
+import { Suspense, useRef, useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import CanvasLoader from "./Loader";
-import Object from "./Object";
+import CanvasLoader from "../Loader";
+import MenuObject from "./Object";
 
-const CameraAdjuster = ({ scale }) => {
+const CameraAdjuster = () => {
   const { camera, scene } = useThree();
 
   useEffect(() => {
@@ -17,12 +17,12 @@ const CameraAdjuster = ({ scale }) => {
     const fov = camera.fov * (Math.PI / 180);
     let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
 
-    cameraZ *= scale; // Zoom out a little so object fits comfortably
+    cameraZ *= 1.5; // Zoom out a little so object fits comfortably
 
     // Move the camera up and back
     camera.position.set(
       center.x,
-      center.y + cameraZ / 10, // Move up by half the cameraZ distance
+      center.y + cameraZ * 0.5, // Move up by half the cameraZ distance
       center.z + cameraZ
     );
 
@@ -34,28 +34,14 @@ const CameraAdjuster = ({ scale }) => {
   return null;
 };
 
-const ObjectCanvas = ({
-  width,
-  height,
-  path,
-  rotate = [0, 0, 0],
-  scale = 1,
-  auto_camera = true,
-}) => {
+const MenuCanvas = ({ path, scale = 1, auto_camera = true }) => {
   return (
-    <div style={{ width: width, height: height }}>
+    <div style={{ width: "200px", height: "200px" }}>
       <Canvas frameloop="demand">
-        <ambientLight intensity={0.2} />
-        <directionalLight
-          position={[5, 10, 5]}
-          intensity={1}
-          castShadow
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-        />
-        <pointLight position={[0, 0, -5]} intensity={10} />
+        <ambientLight intensity={1} />
+        <directionalLight position={[2, 2, 2]} intensity={2} />
         <Suspense fallback={<CanvasLoader />}>
-          <Object path={path} rotate={rotate} scale={scale} />
+          <MenuObject path={path} scale={scale} />
           {auto_camera && <CameraAdjuster />}
           <OrbitControls
             makeDefault
@@ -69,4 +55,4 @@ const ObjectCanvas = ({
   );
 };
 
-export default ObjectCanvas;
+export default MenuCanvas;

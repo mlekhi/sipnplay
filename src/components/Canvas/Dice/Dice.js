@@ -4,12 +4,7 @@ import ObjectCanvas from "./ObjectCanvas";
 const Dice = () => {
   return (
     <>
-      <ObjectCanvas
-        path="/assets/green_dice/scene.gltf"
-        scale={3}
-        height="100px"
-        width="100px"
-      />
+      <ObjectCanvas path="/assets/green_dice/scene.gltf" />
     </>
   );
 };

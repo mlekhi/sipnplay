@@ -10,7 +10,7 @@ function Nav() {
 
   return (
     <div className="menu">
-      <a href="/">
+      <a className="links" href="/">
         <div className="left">
           <img src="logo512.png" className="menu-item" alt="Logo" />
           <p>Sip & Play</p>
@@ -19,10 +19,18 @@ function Nav() {
       <div className="right">
         {/* Show menu links normally on larger screens */}
         <div className="menu-links">
-          <a href="/about">About</a>
-          <a href="/menu">Menu</a>
-          <a href="/events">Events</a>
-          <a href="/games">Games</a>
+          <a href="/about" className="links">
+            About
+          </a>
+          <a href="/menu" className="links">
+            Menu
+          </a>
+          <a href="/events" className="links">
+            Events
+          </a>
+          <a href="/games" className="links">
+            Games
+          </a>
           <a href="https://www.exploretock.com/sipnplay">Reservations</a>
         </div>
 

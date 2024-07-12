@@ -16,11 +16,6 @@
     transition: transform 0.3s ease;
 }
 
-.menu-item:hover {
-    transform: scale(1.1);
-    /* Scale up on hover */
-}
-
 .left {
     display: flex;
     align-items: center;
@@ -49,6 +44,15 @@
 
 .menu-links {
     display: flex;
+}
+
+.links {
+    transition: transform 0.3s ease;
+}
+
+.links:hover {
+    transform: scale(1.1);
+    /* Scale up on hover */
 }
 
 .menu-links a {

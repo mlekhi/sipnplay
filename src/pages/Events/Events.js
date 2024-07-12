@@ -64,7 +64,7 @@ const UpcomingEvents = () => {
               </h3>
               <p className="event-info">{event.description}</p>
             </div>
-            <div className="hidden-mobile">
+            <div className="boba-container">
               <Boba />
             </div>
           </div>

@@ -42,7 +42,7 @@ const CameraAdjuster = () => {
 
 const CustomCanvas = ({ path, rotate = [0, 0, 0], scale = 1 }) => {
   return (
-    <div style={{ width: "250px", height: "250px" }}>
+    <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]">
       <Canvas frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[2, 2, 2]} intensity={1} />

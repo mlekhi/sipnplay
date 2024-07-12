@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import MenuItem from "./MenuItem";
 import "./Menu.css";
 import Papa from "papaparse";
-import ObjectCanvas from "../../components/Canvas/ObjectCanvas";
+import MenuCanvas from "../../components/Canvas/Menu/MenuCanvas";
+import CustomCanvas from "../../components/Canvas/Menu/CustomCanvas";
 import Boba from "../../components/Canvas/Boba";
 
 const Menu = () => {
@@ -49,13 +50,10 @@ const Menu = () => {
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
           <>
-            <h2 className="text-fuchsia-500 text-3xl mb-2 self-start">
+            <h2 key={section} className="text-fuchsia-500 text-3xl mb-2 self-start">
               {section}
             </h2>
-            <div
-              key={section}
-              className="flex flex-col items-start relative w-full mb-8"
-            >
+            <div className="flex flex-col items-start relative w-full mb-8">
               <div className="shadow-inner md:w-[85%] lg:w-[90%] bg-[#DEE9D3] p-5 pl-10 rounded-l-[50px] pr-[100px] h-[220px]">
                 <div className="grid grid-cols-3 gap-4">
                   {items.map((menuItem) => (
@@ -66,12 +64,15 @@ const Menu = () => {
               <div className="absolute self-center justify-center right-[1%] w-[220px] h-[220px] rounded-full bg-[#DEE9D3] pt-2 ">
                 <div className="bg-white w-[95%] h-[95%] rounded-full overflow-hidden shadow-lg">
                   {section === "Coffee" ? (
-                    <ObjectCanvas
+                    <CustomCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
+                      auto_camera={true}
+                      scale={2}
                     />
                   ) : (
-                    <ObjectCanvas
+                    <MenuCanvas
+                      key={section}
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                     />
                   )}

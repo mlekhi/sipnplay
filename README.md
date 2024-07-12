@@ -1,5 +1,7 @@
 # Sip and Play
 
+### Building a website as fun as Sip & Play's board games
+
 ![alt text](image.png)
 In crafting the UI design for "Sip and Play," our primary goal was to ensure a user-friendly and engaging experience. Emphasizing intuitive navigation and seamless interactions were at the forefront of our design choices. We opted for a clean and straightforward layout that prioritizes ease of use, making it simple for users to explore various features without confusion. Each element, from menus to interactive components, was meticulously wireframed using Figma, ensuring coherence and efficiency in user flow.
 

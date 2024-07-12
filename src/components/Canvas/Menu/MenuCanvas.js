@@ -2,8 +2,8 @@ import * as THREE from "three";
 import { Suspense, useRef, useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import CanvasLoader from "./Loader";
-import Object from "./Object";
+import CanvasLoader from "../Loader";
+import MenuObject from "./MenuObject";
 
 const CameraAdjuster = () => {
   const { camera, scene } = useThree();
@@ -22,27 +22,27 @@ const CameraAdjuster = () => {
     // Move the camera up and back
     camera.position.set(
       center.x,
-      center.y + cameraZ * 0.05, // Move up by half the cameraZ distance
+      center.y + cameraZ * 0.5, // Move up by half the cameraZ distance
       center.z + cameraZ
     );
 
-    camera.lookAt(center);
-    // camera.lookAt(center.x, center.y - size.y * 0.2, center.z);
+    // camera.lookAt(center);
+    camera.lookAt(center.x, center.y - size.y * 0.2, center.z);
     camera.updateProjectionMatrix();
   }, [camera, scene]);
 
   return null;
 };
 
-const CustomCanvas = ({ path, rotate = [0, 0, 0], scale = 1 }) => {
+const MenuCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
   return (
-    <div style={{ width: "250px", height: "250px" }}>
+    <div style={{ width: "200px", height: "200px" }}>
       <Canvas frameloop="demand">
         <ambientLight intensity={1} />
-        <directionalLight position={[2, 2, 2]} intensity={1} />
+        <directionalLight position={[2, 2, 2]} intensity={2} />
         <Suspense fallback={<CanvasLoader />}>
-          <Object path={path} rotate={rotate} scale={scale} />
-          <CameraAdjuster />
+          <MenuObject path={path} rotate={rotate} scale={scale} />
+          {auto_camera && <CameraAdjuster />}
           <OrbitControls makeDefault enablePan={false} enableZoom={false} enableRotate={false} />
         </Suspense>
       </Canvas>
@@ -50,4 +50,4 @@ const CustomCanvas = ({ path, rotate = [0, 0, 0], scale = 1 }) => {
   );
 };
 
-export default CustomCanvas;
+export default MenuCanvas;

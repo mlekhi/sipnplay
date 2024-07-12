@@ -11,7 +11,7 @@ const centerModel = (model, scene) => {
   scene.position.set(-center.x, -center.y, -center.z);
 };
 
-const MenuCoffee = ({ path, rotate, scale }) => {
+const CoffeeObject = ({ path, rotate, scale }) => {
   const { scene } = useGLTF(path);
   const [hovered, setHovered] = useState(false);
   const [rotated, setRotated] = useState(false);
@@ -70,4 +70,4 @@ const MenuCoffee = ({ path, rotate, scale }) => {
   );
 };
 
-export default MenuCoffee;
+export default CoffeeObject;

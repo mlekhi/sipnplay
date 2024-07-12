@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF, Center } from "@react-three/drei";
 
-const Object = ({ path, rotate, scale }) => {
+const CoffeeObject = ({ path, rotate, scale }) => {
   const { scene } = useGLTF(path);
   const modelRef = useRef();
   const { invalidate } = useThree();
@@ -19,8 +19,8 @@ const Object = ({ path, rotate, scale }) => {
 
   useFrame(() => {
     if (hovered && !rotated) {
-      modelRef.current.rotation.y += 0.3;
-      if (modelRef.current.rotation.y >= Math.PI * 2) {
+      modelRef.current.rotation.y += 0.1;
+      if (modelRef.current.rotation.y >= Math.PI * 10) {
         setRotated(true);
         modelRef.current.rotation.y = 0;
       }
@@ -31,13 +31,31 @@ const Object = ({ path, rotate, scale }) => {
     }
   });
 
+  const handlePointerOver = () => {
+    setHovered(true);
+    setRotated(false);
+    invalidate();
+  };
+
+  const handlePointerOut = () => {
+    if (rotated) {
+      setHovered(false);
+    }
+    invalidate();
+  };
+
   return (
     <Center>
-      <group ref={modelRef} scale={scale} rotation={rotate}>
+      <group
+        ref={modelRef}
+        scale={scale}
+        rotation={rotate}
+        onPointerOver={handlePointerOver}
+        onPointerOut={handlePointerOut}>
         <primitive object={scene.clone()} />
       </group>
     </Center>
   );
 };
 
-export default Object;
+export default CoffeeObject;

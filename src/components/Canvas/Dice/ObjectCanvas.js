@@ -1,9 +1,8 @@
 import * as THREE from "three";
-import { Suspense, useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import CanvasLoader from "../Loader";
-import MenuObject from "./Object";
+import Object from "./Object";
 
 const CameraAdjuster = () => {
   const { camera, scene } = useThree();
@@ -26,35 +25,23 @@ const CameraAdjuster = () => {
       center.z + cameraZ
     );
 
-    // camera.lookAt(center);
-    camera.lookAt(center.x, center.y - size.y * 0.2, center.z);
+    camera.lookAt(center);
+    // camera.lookAt(center.x, center.y - size.y * 0.2, center.z);
     camera.updateProjectionMatrix();
   }, [camera, scene]);
 
   return null;
 };
 
-const MenuCanvas = ({
-  path,
-  rotate = [1, 1, 1],
-  scale = 1,
-  auto_camera = true,
-}) => {
+const MenuCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
   return (
     <div style={{ width: "200px", height: "200px" }}>
       <Canvas frameloop="demand">
-        <ambientLight intensity={1} />
-        <directionalLight position={[2, 2, 2]} intensity={2} />
-        <Suspense fallback={<CanvasLoader />}>
-          <MenuObject path={path} scale={scale} rotate={rotate} />
-          {auto_camera && <CameraAdjuster />}
-          <OrbitControls
-            makeDefault
-            enablePan={false}
-            enableZoom={false}
-            enableRotate={false}
-          />
-        </Suspense>
+        <ambientLight intensity={2} />
+        <directionalLight position={[2, 2, 2]} intensity={5} />
+        <Object path={path} scale={scale} rotate={rotate} />
+        {auto_camera && <CameraAdjuster />}
+        <OrbitControls makeDefault enablePan={false} enableZoom={false} enableRotate={false} />
       </Canvas>
     </div>
   );

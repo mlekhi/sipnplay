@@ -1,6 +1,6 @@
 import React from "react";
 import Dice from "../../components/Canvas/Dice/Dice";
-import Coffee from "../../components/Canvas/Coffee";
+import Coffee from "../../components/Canvas/Landing/Coffee";
 import "./Landing.css";
 
 function Landing() {

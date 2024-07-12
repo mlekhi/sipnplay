@@ -80,14 +80,6 @@ const TicTacToe = () => {
     <>
       <div className="flex flex-col mx-auto">
         <div className="text-lg">{status}</div>
-        {(winner || status === "It's a tie!") && (
-          <button
-            key="again"
-            className="my-2 px-4 py-2 bg-[#DEE9D3] shadow-inner text-white font-bold rounded"
-            onClick={resetGame}>
-            Play Again!
-          </button>
-        )}
         <div className="grid grid-cols-3 gap-2 bg-[#DEE9D3] border-none">
           {Array.from({ length: 9 }).map((_, index) => (
             <div key={index}>
@@ -126,6 +118,16 @@ const TicTacToe = () => {
             </div>
           ))}
         </div>
+        {winner || status === "It's a tie!" ? (
+          <button
+            key="again"
+            className="my-2 px-4 py-2 bg-[#DEE9D3] shadow-inner text-[#555] font-bold rounded"
+            onClick={resetGame}>
+            Play Again!
+          </button>
+        ) : (
+          <div className="my-2 h-[40px]"></div>
+        )}
       </div>
     </>
   );

@@ -11,9 +11,6 @@ function About() {
       transition: "transform 0.2s ease",
       display: "inline-block", // Ensures inline block display for correct hover effect
     },
-    linkHover: {
-      transform: "scale(1.1)",
-    },
   };
 
   return (
@@ -28,11 +25,14 @@ function About() {
             from our library of 300+ games! We hope when you visit, you also enjoy our coffee,
             espresso, boba, sandwiches, and snacks!
           </p>
-          <a style={styles.link} href="https://www.exploretock.com/sipnplay">
+          <a
+            style={styles.link}
+            className="text-lg hover:scale-110 "
+            href="https://www.exploretock.com/sipnplay">
             Make a Reservation!
           </a>
         </div>
-        <div className="flex flex-row justify-around items-center p-4 w-full">
+        <div className="flex flex-row justify-around items-center p-4 w-full h-full">
           <div>
             <TicTacToe />
           </div>

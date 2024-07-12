@@ -1,8 +1,19 @@
 import React from "react";
 import Insta from "./InstagramEmbed.js";
-import "./About.css";
 
 function About() {
+  const styles = {
+    link: {
+      fontSize: "20pt",
+      textDecoration: "none",
+      transition: "transform 0.2s ease",
+      display: "inline-block", // Ensures inline block display for correct hover effect
+    },
+    linkHover: {
+      transform: "scale(1.1)",
+    },
+  };
+
   return (
     <div>
       <div className="App-header">
@@ -15,11 +26,9 @@ function About() {
           library of 300+ games! We hope when you visit, you also enjoy our
           coffee, espresso, boba, sandwiches, and snacks!
         </p>
-        <a href="https://www.exploretock.com/sipnplay">Make a Reservation</a>
-      </div>
-
-      <div className="Instagram-carousel">
-        <Insta />
+        <a style={styles.link} href="https://www.exploretock.com/sipnplay">
+          Make a Reservation
+        </a>
       </div>
     </div>
   );

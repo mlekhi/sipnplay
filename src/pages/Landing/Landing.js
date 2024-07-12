@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Dice from "../../components/Canvas/Dice";
+import Dice from "../../components/Canvas/Dice/Dice";
 import Coffee from "../../components/Canvas/Coffee";
 import "./Landing.css";
 

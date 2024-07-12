@@ -27,6 +27,7 @@ const Gallery = () => {
   const filterItems = () => {
     let filtered = items.filter((item) => {
       const title = item.title.toLowerCase();
+      // Conditional return statement: filters items based on search query and selected tags.
       return searchQuery
         ? title.includes(searchQuery.toLowerCase()) &&
             (selectedTags.length === 0 ||

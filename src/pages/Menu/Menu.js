@@ -59,7 +59,9 @@ const Menu = () => {
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
           <div key={section} className="w-full">
-            <h2 className="font-semibold text-3xl mb-2 self-start hidden md:flex">{section}</h2>
+            <h2 className="font-semibold text-3xl mb-2 self-start hidden md:flex">
+              {section}
+            </h2>
             <div className=" flex-col items-start relative w-full mb-8 hidden md:flex">
               <div className="shadow-inner md:w-[85%] lg:w-[90%] bg-[#DEE9D3] p-3 pl-10 rounded-l-[50px] pr-[100px] h-[220px]">
                 <div className="grid grid-cols-3 gap-2">
@@ -107,7 +109,9 @@ const Menu = () => {
               </div>
             </div>
             {/* mobile styling here */}
-            <h2 className="text-fuchsia-500 text-xl mb-2 self-start md:hidden">{section}</h2>
+            <h2 className="font-semibold text-xl mb-2 self-start md:hidden">
+              {section}
+            </h2>
             <div className="flex flex-col items-start relative w-full h-full mb-8 md:hidden">
               <div className="shadow-inner self-center w-[80%] bg-[#DEE9D3] p-6 rounded-[50px] ">
                 <div className="text-center bg-white w-fit rounded-full overflow-hidden shadow-lg mx-auto">

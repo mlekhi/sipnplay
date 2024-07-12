@@ -13,7 +13,7 @@ function Nav() {
       <a className="links" href="/">
         <div className="left">
           <img src="logo512.png" className="menu-item width-[200px]" alt="Logo" />
-          <a>Sip & Play</a>
+          <a href="/">Sip & Play</a>
         </div>
       </a>
       <div className="right">

@@ -1,7 +1,0 @@
-/* src/fonts/fonts.css */
-
-@font-face {
-    font-family: 'PurpleFont';
-    src: url('./purple.otf') format('opentype');
-    /* Additional font properties (e.g., font-weight, font-style) can be specified here */
-}

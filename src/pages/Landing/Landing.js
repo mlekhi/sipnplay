@@ -17,13 +17,17 @@ function Landing() {
       </div>
       <div className="App-header">
         <p>
-          Come on in with your friends and family and play boardgames from our
-          collection of over 500+ games! Just $10 a person for 3 hours of
-          gameplay. ($12 a person Friday-Sunday and Holidays) Play while
-          enjoying bubble tea, coffee, beer sandwiches or salads and have a
-          great time! If you want to guarantee a table, you can make a
-          reservation which is $15 a person for 3 hours of gameplay.
+          Come on in with your friends and family. Play from our collection of
+          over{" "}
         </p>
+        <span className="bold-words">500+ games for just $10/person!</span>
+        <p>($12/person Friday-Sunday and Holidays)</p>
+        <p>Enjoy 3 hours of gameplay while savouring</p>
+        <span className="bold-words">
+          bubble tea, coffee, beer, sandwiches or salads
+        </span>
+        <p>If you want to guarantee a table, you can make a</p>
+        <span className="bold-words">reservation for $15 a person</span>
         <Coffee />
       </div>
     </div>

@@ -32,3 +32,10 @@
     top: 350px;
     left: 350px;
 }
+
+.bold-words {
+    color: #6f8d47;
+    font-weight: bold;
+    font-size: 24px;
+    /* Adjust size as needed */
+}

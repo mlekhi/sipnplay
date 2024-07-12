@@ -3,6 +3,7 @@ import MenuItem from "./MenuItem";
 import "./Menu.css";
 import Papa from "papaparse";
 import MenuCanvas from "../../components/Canvas/Menu/MenuCanvas";
+import MenuFrontCanvas from "../../components/Canvas/Menu/MenuFrontCanvas";
 import CoffeeCanvas from "../../components/Canvas/Menu/CoffeeCanvas";
 import Boba from "../../components/Canvas/Menu/Boba";
 
@@ -13,6 +14,7 @@ const Menu = () => {
     fetchMenuItems();
   }, []);
 
+  // function to grab data stored in csv file
   const fetchMenuItems = async () => {
     try {
       const path = process.env.PUBLIC_URL + "/Items/menu.csv";
@@ -47,6 +49,7 @@ const Menu = () => {
       {/* big letter font */}
       <h1 className="menu-title">Menu</h1>
       <Boba />
+      {/* map out sections, and then each item */}
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
           <div key={section} className="w-full">
@@ -65,8 +68,27 @@ const Menu = () => {
                     <CoffeeCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
-                      auto_camera={true}
                       scale={2}
+                    />
+                  ) : section === "Seasonal Menu" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Boba" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Hot Bites" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Sandwiches & Salads" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
                     />
                   ) : (
                     <MenuCanvas
@@ -86,8 +108,27 @@ const Menu = () => {
                     <CoffeeCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
                       rotate={[-Math.PI / 2, 0, 0]}
-                      auto_camera={true}
                       scale={2}
+                    />
+                  ) : section === "Seasonal Menu" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Boba" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Hot Bites" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
+                    />
+                  ) : section === "Sandwiches & Salads" ? (
+                    <MenuFrontCanvas
+                      key={section}
+                      path={sectionModels[section] || "/assets/boba/scene.gltf"}
                     />
                   ) : (
                     <MenuCanvas

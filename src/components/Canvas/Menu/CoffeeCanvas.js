@@ -4,6 +4,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import CoffeeObject from "./CoffeeObject";
 
+// Component to move camera to capture model
 const CameraAdjuster = () => {
   const { camera, scene } = useThree();
 
@@ -24,6 +25,7 @@ const CameraAdjuster = () => {
     // Move the camera up and back
     // camera.position.set(-center.x, size.y / 2 - center.y, -center.z + cameraZ);
 
+    // specific camera angle to capture coffee in middle
     camera.position.set(
       center.x - cameraZ * 0.09,
       center.y + cameraZ * 0.1, // Move up by half the cameraZ distance
@@ -43,6 +45,7 @@ const CoffeeCanvas = ({ path, rotate = [0, 0, 0], scale = 1 }) => {
   return (
     <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]">
       <Canvas frameloop="demand">
+        {/* lights for object to show colors */}
         <ambientLight intensity={1} />
         <directionalLight position={[2, 2, 2]} intensity={1} />
         <CoffeeObject path={path} rotate={rotate} scale={scale} />

@@ -1,74 +1,96 @@
-import React, { useState, useEffect } from "react";
-import GalleryItem from "./GalleryItem"; // Assuming GalleryItem component is defined
-import { FaTimes } from "react-icons/fa"; // Import FaTimes icon from react-icons
-import gameData from "./boardgames.json"; // Import JSON data (adjust path as needed)
-import "./GalleryItem.css";
-import Dice from "../../components/Canvas/Dice/Dice2.js";
+import React, { useState, useEffect } from "react"; // Importing React, useState, and useEffect hooks
+import GalleryItem from "./GalleryItem"; // Importing GalleryItem component from current directory
+import { FaTimes } from "react-icons/fa"; // Importing FaTimes icon from react-icons library
+import gameData from "./boardgames.json"; // Importing JSON data for game items (adjust path as needed)
+import "./GalleryItem.css"; // Importing local CSS styles for GalleryItem component
+import Dice from "../../components/Canvas/Dice/Dice2.js"; // Importing Dice component from Canvas directory
 
+// Functional component Gallery
 const Gallery = () => {
-  const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [uniqueLabels, setUniqueLabels] = useState([]);
+  // State management using hooks
+  const [items, setItems] = useState([]); // State for all items from gameData
+  const [filteredItems, setFilteredItems] = useState([]); // State for filtered items based on search and tags
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query input
+  const [selectedTags, setSelectedTags] = useState([]); // State for selected tags
+  const [uniqueLabels, setUniqueLabels] = useState([]); // State for unique labels extracted from gameData
 
+  // useEffect to initialize items and extract unique labels on component mount
   useEffect(() => {
-    // Initialize items state with JSON data
-    setItems(gameData);
-    // Extract unique labels from the items
+    setItems(gameData); // Initialize items state with gameData
     const labels = gameData
       .filter((item) => item.label) // Filter items that have a label
-      .map((item) => item.label); // Map to only labels
-    setUniqueLabels([...new Set(labels)]); // Remove duplicates and set state
-  }, []);
+      .map((item) => item.label); // Extract labels from filtered items
+    setUniqueLabels([...new Set(labels)]); // Set state with unique labels (removing duplicates)
+  }, []); // Empty dependency array ensures useEffect runs only once on mount
 
+  // Function to filter items based on search query and selected tags
   const filterItems = () => {
     let filtered = items.filter((item) => {
-      const title = item.title.toLowerCase();
-      return searchQuery
-        ? title.includes(searchQuery.toLowerCase()) &&
-            (selectedTags.length === 0 ||
+      const title = item.title.toLowerCase(); // Convert title to lowercase for case-insensitive search
+      return (
+        // Filter logic:
+        // - Include item if searchQuery matches title
+        // - Include item if selectedTags is empty or matches item's label
+        searchQuery
+          ? title.includes(searchQuery.toLowerCase()) &&
+              (selectedTags.length === 0 ||
+                selectedTags.every(
+                  (tag) => item.label && item.label.includes(tag)
+                ))
+          : selectedTags.length === 0 ||
               selectedTags.every(
                 (tag) => item.label && item.label.includes(tag)
-              ))
-        : selectedTags.length === 0 ||
-            selectedTags.every((tag) => item.label && item.label.includes(tag));
+              )
+      );
     });
-    setFilteredItems(filtered);
+    setFilteredItems(filtered); // Update filteredItems state with filtered results
   };
 
+  // useEffect to update filteredItems whenever items change
   useEffect(() => {
-    // Initialize filteredItems with all items when items change
-    setFilteredItems(items);
-  }, [items]);
+    setFilteredItems(items); // Initialize filteredItems with all items on items change
+  }, [items]); // Depend on items to trigger useEffect when items change
 
+  // Event handler for search input change
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+    setSearchQuery(event.target.value); // Update searchQuery state with input value
   };
 
+  // Function to clear search query and reset filteredItems to all items
   const clearSearch = () => {
-    setSearchQuery(""); // Clear search query
-    setFilteredItems(items); // Reset filtered items to all items
+    setSearchQuery(""); // Clear searchQuery state
+    setFilteredItems(items); // Reset filteredItems state to all items
   };
 
+  // Event handler for tag button click
   const handleTagClick = (event) => {
-    const tag = event.target.value;
-    setSelectedTags((prevSelectedTags) =>
-      prevSelectedTags.includes(tag)
-        ? prevSelectedTags.filter((t) => t !== tag)
-        : [...prevSelectedTags, tag]
+    const tag = event.target.value; // Get tag value from clicked button
+    setSelectedTags(
+      (prevSelectedTags) =>
+        prevSelectedTags.includes(tag)
+          ? prevSelectedTags.filter((t) => t !== tag) // Remove tag if already selected
+          : [...prevSelectedTags, tag] // Add tag if not already selected
     );
   };
 
+  // useEffect to filter items whenever searchQuery or selectedTags change
   useEffect(() => {
-    // Filter items when searchQuery or selectedTags change
-    filterItems();
-  }, [searchQuery, selectedTags]);
+    filterItems(); // Call filterItems function on searchQuery or selectedTags change
+  }, [searchQuery, selectedTags]); // Depend on searchQuery and selectedTags to trigger useEffect
 
+  // JSX structure for rendering the component
   return (
     <div className="App-header">
-      <img src="headers/gamecatalogue.png" className="pointer-events-none" />
+      {" "}
+      {/* Main container with App-header class */}
+      <img
+        src="headers/gamecatalogue.png"
+        className="pointer-events-none"
+      />{" "}
+      {/* Image header */}
+      {/* Filter options section */}
       <div className="filter-options flex flex-col md:flex-row items-center w-full justify-between">
+        {/* Search bar */}
         <div className="search-bar">
           <input
             className="p-2 w-full"
@@ -77,12 +99,14 @@ const Gallery = () => {
             onChange={handleSearchChange}
             placeholder="Search..."
           />
+          {/* Clear search button, visible when searchQuery is not empty */}
           {searchQuery && (
             <button className="clear-button ml-2" onClick={clearSearch}>
-              <FaTimes />
+              <FaTimes /> {/* FaTimes icon for clearing search */}
             </button>
           )}
         </div>
+        {/* Tag filter buttons */}
         <div className="filter-options flex-row">
           {uniqueLabels.map((label) => (
             <button
@@ -93,24 +117,26 @@ const Gallery = () => {
               }`}
               onClick={(e) => handleTagClick(e)}
             >
-              {label}
+              {label} {/* Display label as button text */}
             </button>
           ))}
         </div>
       </div>
+      {/* Gallery section displaying filtered items */}
       <div className="gallery">
         {filteredItems.map((item) => (
-          <GalleryItem key={item.title} item={item} />
+          <GalleryItem key={item.title} item={item} /> // Render GalleryItem component for each filtered item
         ))}
       </div>
+      {/* Dice components */}
       <div className="dice1">
-        <Dice />
+        <Dice /> {/* Render Dice component */}
       </div>
       <div className="dice2">
-        <Dice />
+        <Dice /> {/* Render Dice component */}
       </div>
     </div>
   );
 };
 
-export default Gallery;
+export default Gallery; // Export Gallery component for use in other modules

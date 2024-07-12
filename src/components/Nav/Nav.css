@@ -1,5 +1,5 @@
 .menu {
-    height: 30px;
+    height: 50px;
     /* Adjust height as needed */
     display: flex;
     align-items: center;
@@ -8,9 +8,9 @@
 }
 
 .menu-item {
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px;
     display: inline-block;
     text-decoration: none;
     transition: transform 0.3s ease;

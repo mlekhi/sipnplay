@@ -26,30 +26,24 @@ const CameraAdjuster = () => {
       center.z + cameraZ
     );
 
-    camera.lookAt(center);
-    // camera.lookAt(center.x, center.y - size.y * 0.2, center.z);
+    // camera.lookAt(center);
+    camera.lookAt(center.x, center.y - size.y * 0.2, center.z);
     camera.updateProjectionMatrix();
   }, [camera, scene]);
 
   return null;
 };
 
-const ObjectCanvas = ({ path, rotate = [0, 0, 0], scale = 1 }) => {
+const ObjectCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
   return (
-    <div style={{ width: "250px", height: "250px" }}>
+    <div style={{ width: "200px", height: "200px" }}>
       <Canvas frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[2, 2, 2]} intensity={2} />
         <Suspense fallback={<CanvasLoader />}>
           <Object path={path} rotate={rotate} scale={scale} />
-          <CameraAdjuster />
-          <OrbitControls
-            makeDefault
-            enablePan={false}
-            enableZoom={false}
-            enableRotate={false}
-            rotateSpeed={0.5}
-          />
+          {auto_camera && <CameraAdjuster />}
+          <OrbitControls makeDefault enablePan={false} enableZoom={false} enableRotate={false} />
         </Suspense>
       </Canvas>
     </div>

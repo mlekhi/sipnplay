@@ -6,7 +6,7 @@ const CanvasLoader = () => {
   const { progress } = useProgress();
   return (
     <Html center>
-      <CircularProgress variant="determinate" value={progress} />
+      {/* <CircularProgress variant="determinate" value={progress} /> */}
       <p>{progress.toFixed(2)}%</p>
     </Html>
   );

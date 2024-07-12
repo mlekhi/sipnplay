@@ -1,6 +1,6 @@
 // src/components/Events.js
 
-import React, { useState } from "react";
+import React from "react";
 import eventsData from "./eventsData.js"; // Importing events data from eventsData.js
 import Boba from "../../components/Canvas/HomemadeBoba/Boba.js"; // Importing Boba component
 import "./Events.css"; // Importing local CSS styles for Events component
@@ -27,20 +27,15 @@ const UpcomingEvents = () => {
       ></img>
       {/* Paragraph introducing Sip & Play events */}
       <p>
-        Here at Sip & Play, we host{" "}
-        <a href="https://magic.wizards.com/en">Magic the Gathering</a> community
-        meetups and events!
+        Here at Sip & Play, we host <a href="https://magic.wizards.com/en">Magic the Gathering</a>{" "}
+        community meetups and events!
       </p>
-      <p>
-        Want to join the Sip & Play community? All of the action is on our
-        Discord.
-      </p>
+      <p>Want to join the Sip & Play community? All of the action is on our Discord.</p>
       <br></br>
       {/* Link to join Discord with dynamic styling */}
       <a
         href="https://discord.gg/bdURvWC"
-        className="text-xl text-[#577335] font-medium link hover:scale-110 hover:font-bold"
-      >
+        className="text-xl text-[#577335] font-medium link hover:scale-110 hover:font-bold">
         Join Here!
       </a>
       {/* Mapping over eventsData to create cards for each event */}
@@ -57,8 +52,7 @@ const UpcomingEvents = () => {
                 <p className="event-info font-semibold">
                   {event.day.slice(0, 3).toUpperCase()} {/* Abbreviated day */}
                 </p>
-                <p className="event-info">{formatDate(event.date)}</p>{" "}
-                {/* Formatted date */}
+                <p className="event-info">{formatDate(event.date)}</p> {/* Formatted date */}
               </div>
             </div>
 
@@ -73,8 +67,7 @@ const UpcomingEvents = () => {
                 {event.time} {/* Event time */}
               </h3>
               {/* Event description */}
-              <p className="event-info">{event.description}</p>{" "}
-              {/* Event description */}
+              <p className="event-info">{event.description}</p> {/* Event description */}
             </div>
 
             {/* Container for Boba component */}

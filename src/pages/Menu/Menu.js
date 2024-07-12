@@ -70,6 +70,7 @@ const Menu = () => {
               </div>
               <div className="absolute self-center justify-center md:right-[3%] lg:right-[2%] w-[220px] h-[220px] rounded-full bg-[#DEE9D3] pt-2 ">
                 <div className="bg-white w-[95%] h-[95%] rounded-full overflow-hidden shadow-lg">
+                  {/* checking for specific sections to have different threejs camera angles */}
                   {section === "Coffee" ? (
                     <CoffeeCanvas
                       path={sectionModels[section] || "/assets/boba/scene.gltf"}
@@ -143,6 +144,7 @@ const Menu = () => {
                     />
                   )}
                 </div>
+                {/* render items as a single column */}
                 <div className="grid grid-cols-1 gap-2">
                   {items.map((menuItem) => (
                     <MenuItem key={menuItem.id} item={menuItem} />
@@ -161,6 +163,7 @@ const Menu = () => {
 
 export default Menu;
 
+// link sections with the 3d model assets they are associated with
 const sectionModels = {
   Coffee: "/assets/iced_coffee/scene.gltf",
   "Specialty Drinks": "/assets/cafe_latte_with_art/scene.gltf",

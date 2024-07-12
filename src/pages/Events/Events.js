@@ -1,6 +1,8 @@
 // src/components/CalendarPage.js
 import React, { useState } from "react";
 import eventsData from "./eventsData.js"; // Import your events data
+import Boba from "../../components/Canvas/HomemadeBoba/Boba.js";
+import "./Events.css";
 
 const UpcomingEvents = () => {
   // convert the YYYY-MM-DD into a readable format
@@ -32,7 +34,7 @@ const UpcomingEvents = () => {
       <br></br>
       <a
         href="https://discord.gg/bdURvWC"
-        className="text-xl text-[#577335] font-medium hover:scale-110 hover:font-bold"
+        className="text-xl text-[#577335] font-medium link hover:scale-110 hover:font-bold"
       >
         Join Here!
       </a>
@@ -47,11 +49,11 @@ const UpcomingEvents = () => {
             <div className="flex basis-1/6 items-center justify-center md:justify-start pt-8 md:pt-0 md:pr-8">
               <div className="text-center md:text-Right">
                 <p className="event-info font-semibold">
-                {event.day.slice(0, 3).toUpperCase()}
-              </p>
+                  {event.day.slice(0, 3).toUpperCase()}
+                </p>
                 <p className="event-info">{formatDate(event.date)}</p>
               </div>
-             </div>
+            </div>
             {/* Right side contains event title, time, and description */}
             <div className="text-left shadow-inner w-full md:w-[85%] lg:w-[90%] bg-[#DEE9D3] p-6 md:p-10 rounded-[50px]">
               <h3 className="event-title font-semibold text-[#577335]">
@@ -61,6 +63,9 @@ const UpcomingEvents = () => {
                 {event.time}
               </h3>
               <p className="event-info">{event.description}</p>
+            </div>
+            <div className="hidden-mobile">
+              <Boba />
             </div>
           </div>
         ))}

@@ -3,6 +3,7 @@ import GalleryItem from "./GalleryItem"; // Assuming GalleryItem component is de
 import { FaTimes } from "react-icons/fa"; // Import FaTimes icon from react-icons
 import gameData from "./boardgames.json"; // Import JSON data (adjust path as needed)
 import "./GalleryItem.css";
+import Dice from "../../components/Canvas/Dice/Dice.js";
 
 const Gallery = () => {
   const [items, setItems] = useState([]);
@@ -67,10 +68,10 @@ const Gallery = () => {
   return (
     <div className="App-header">
       <img src="headers/gamecatalogue.png" className="pointer-events-none" />
-      <div className="filter-options flex-row items-baseline w-full justify-around">
+      <div className="filter-options flex flex-col md:flex-row items-center w-full justify-between">
         <div className="search-bar">
           <input
-            className="self-center p-2"
+            className="p-2 w-full"
             type="text"
             value={searchQuery}
             onChange={handleSearchChange}
@@ -101,6 +102,12 @@ const Gallery = () => {
         {filteredItems.map((item) => (
           <GalleryItem key={item.title} item={item} />
         ))}
+      </div>
+      <div className="dice1">
+        <Dice />
+      </div>
+      <div className="dice2">
+        <Dice />
       </div>
     </div>
   );

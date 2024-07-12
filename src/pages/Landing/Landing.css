@@ -1,4 +1,9 @@
 /* Landing.css */
+.logo {
+    height:auto;
+    width: 400pt;
+}
+
 .dice {
     position: absolute;
     top:0px;

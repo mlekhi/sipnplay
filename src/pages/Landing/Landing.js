@@ -7,7 +7,7 @@ function Landing() {
   return (
     <div>
       <div className="App-header2">
-        <h1>Sip & Play</h1>
+        <img src="logo512.png" className="logo" />
         <div id="dice" className="dice">
           <Dice />
           <Dice />

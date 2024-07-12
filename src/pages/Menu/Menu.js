@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import MenuItem from "./MenuItem";
 import "./Menu.css";
 import Papa from "papaparse";
-<<<<<<< Updated upstream
 import ObjectCanvas from "../../components/Canvas/ObjectCanvas";
-=======
->>>>>>> Stashed changes
 import Boba from "../../components/Canvas/Boba";
 
 const Menu = () => {
@@ -46,7 +43,6 @@ const Menu = () => {
 
   return (
     <div className="App-header">
-<<<<<<< Updated upstream
       {/* big letter font */}
       <Boba />
       <h1 className="menu-title">Menu</h1>
@@ -87,19 +83,6 @@ const Menu = () => {
       ) : (
         <p>Loading...</p>
       )}
-=======
-      <Boba />
-      <h1 className="menu-title">Restaurant Menu</h1>
-      <div className="menu-items">
-        {menuItems.length > 0 ? (
-          menuItems.map((menuItem) => (
-            <MenuItem key={menuItem.id} item={menuItem} />
-          ))
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
->>>>>>> Stashed changes
     </div>
   );
 };

@@ -6,7 +6,6 @@ import CanvasLoader from "./Loader";
 import Object from "./Object";
 
 const CameraAdjuster = ({ scale }) => {
-const CameraAdjuster = ({ scale }) => {
   const { camera, scene } = useThree();
 
   useEffect(() => {

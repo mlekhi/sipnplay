@@ -7,10 +7,11 @@ const centerModel = (model, scene) => {
   const box = new THREE.Box3().setFromObject(scene);
   const center = box.getCenter(new THREE.Vector3());
 
-  // center
+  // center model using THREE
   scene.position.set(-center.x, -center.y, -center.z);
 };
 
+// Specific coffee object component for unique model
 const CoffeeObject = ({ path, rotate, scale }) => {
   const { scene } = useGLTF(path);
   const [hovered, setHovered] = useState(false);
@@ -18,12 +19,14 @@ const CoffeeObject = ({ path, rotate, scale }) => {
   const modelRef = useRef();
   const { invalidate } = useThree();
 
+  // call the centerModel function on load
   useEffect(() => {
     if (modelRef.current) {
       centerModel(modelRef.current, scene);
     }
   }, [scene]);
 
+  // set position of model to level of rotation or scale if exists
   useEffect(() => {
     if (modelRef.current) {
       modelRef.current.rotation.set(...rotate);
@@ -32,6 +35,7 @@ const CoffeeObject = ({ path, rotate, scale }) => {
     }
   }, [rotate, scale, invalidate]);
 
+  // logic to spin the model by modifying rotation, a full circle is 2 * pi
   useFrame(() => {
     if (hovered && !rotated) {
       modelRef.current.rotation.z += 0.1;
@@ -43,6 +47,7 @@ const CoffeeObject = ({ path, rotate, scale }) => {
     }
   });
 
+  // functions to handle hovering over a model
   const handlePointerOver = () => {
     setHovered(true);
     setRotated(false);

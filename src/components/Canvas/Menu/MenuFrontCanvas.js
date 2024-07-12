@@ -23,7 +23,7 @@ const CameraAdjuster = () => {
     // Move the camera up and back to catch object at angle
     camera.position.set(
       center.x,
-      center.y + cameraZ * 0.5, // Move up by half the cameraZ distance
+      center.y, // front facing camera
       center.z + cameraZ
     );
 
@@ -35,7 +35,7 @@ const CameraAdjuster = () => {
   return null;
 };
 
-const MenuCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
+const MenuFrontCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
   return (
     <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]">
       <Canvas frameloop="demand">
@@ -50,4 +50,4 @@ const MenuCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true })
   );
 };
 
-export default MenuCanvas;
+export default MenuFrontCanvas;

@@ -10,6 +10,7 @@ React + Tailwind + Vercel Deployment + Three.js + Leaflet Map + React Router
 ## Process
 
 ![alt text](image-4.png)
+Original webpage:
 ![alt text](image-5.png)
 Our process began with a thorough breakdown of the Sip and Play brand and its unique value propositions. We aimed to highlight the playful nature of the platform and its diverse menu offerings through consistent branding. The logo, adorned with chrome bubble letters and set against a vibrant green color scheme, embodies the energetic and inviting atmosphere we sought to create. Drawing inspiration from the original website, we identified key information and emphasized these elements to maintain continuity and user familiarity.
 

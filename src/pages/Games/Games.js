@@ -31,9 +31,7 @@ const Gallery = () => {
       return searchQuery
         ? title.includes(searchQuery.toLowerCase()) &&
             (selectedTags.length === 0 ||
-              selectedTags.every(
-                (tag) => item.label && item.label.includes(tag)
-              ))
+              selectedTags.every((tag) => item.label && item.label.includes(tag)))
         : selectedTags.length === 0 ||
             selectedTags.every((tag) => item.label && item.label.includes(tag));
     });
@@ -104,11 +102,8 @@ const Gallery = () => {
             <button
               key={label}
               value={label}
-              className={`filter-button p-2 ${
-                selectedTags.includes(label) ? "active" : ""
-              }`}
-              onClick={(e) => handleTagClick(e)}
-            >
+              className={`filter-button p-2 ${selectedTags.includes(label) ? "active" : ""}`}
+              onClick={(e) => handleTagClick(e)}>
               {label}
             </button>
           ))}

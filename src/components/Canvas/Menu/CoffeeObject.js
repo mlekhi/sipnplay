@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { useState, useRef, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Center } from "@react-three/drei";
+import { useGLTF, Center } from "@react-three/drei";
 
 // Function to center the model within the scene
 const centerModel = (model, scene) => {

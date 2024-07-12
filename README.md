@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Sip and Play
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![alt text](image.png)
+In crafting the UI design for "Sip and Play," our primary goal was to ensure a user-friendly and engaging experience. Emphasizing intuitive navigation and seamless interactions were at the forefront of our design choices. We opted for a clean and straightforward layout that prioritizes ease of use, making it simple for users to explore various features without confusion. Each element, from menus to interactive components, was meticulously wireframed using Figma, ensuring coherence and efficiency in user flow.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+React + Tailwind + Vercel Deployment + Three.js + Leaflet Map + React Router
 
-### `npm start`
+## Process
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![alt text](image-4.png)
+![alt text](image-5.png)
+Our process began with a thorough breakdown of the Sip and Play brand and its unique value propositions. We aimed to highlight the playful nature of the platform and its diverse menu offerings through consistent branding. The logo, adorned with chrome bubble letters and set against a vibrant green color scheme, embodies the energetic and inviting atmosphere we sought to create. Drawing inspiration from the original website, we identified key information and emphasized these elements to maintain continuity and user familiarity.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 3JS
 
-### `npm test`
+![alt text](image-2.png)
+The integration of Three.js was pivotal for enhancing the visual experience, leveraging 3D elements to enrich gaming and social interactions. We developed over 8 unique Three.js assets, each customized with unique orientations and sizes to tailor the visual presentation and interactive dynamics of the platform. Additionally, we implemented separate canvases for different image views, allowing images to dynamically change and rotate upon hover, enhancing user engagement and immersion within the digital environment. For some of the assets, we even 3D modelled them ourselves, including the one above.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Branding
 
-### `npm run build`
+For "Sip and Play," the branding revolves around a playful aesthetic highlighted by chrome bubble letters and engaging 3D assets. The color scheme leans towards vibrant greens, evoking a fresh and energetic vibe. Interactive elements like rotating menu items on hover enhance user engagement and add a dynamic touch to the user experience. This branding approach aims to create a fun and inviting atmosphere, resonating well with the target audience's preferences for lively and visually stimulating interfaces.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## SEO
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![alt text](image-1.png)
+SEO played a crucial role in maximizing visibility and accessibility for Sip and Play. We implemented strategies focused on keyword relevance, efficient code for fast loading speeds, and ensuring crawlability through sitemaps and structured data. Crafting effective meta tags further enhanced our search engine performance, driving organic traffic and improving overall user engagement. These efforts were instrumental in positioning Sip and Play prominently within search engine results, reaching a broader audience effectively.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## User Experience & Usability
 
-### `npm run eject`
+User experience was central to our design philosophy. We incorporated bold headers, clear calls to action, and a condensed menu structure for easy navigation, particularly for things like the reservations link. We also decided to transform the game catalog from a spreadsheet into an image-driven search interface improved visual appeal and user engagement. These enhancements made browsing and exploring content more intuitive and enjoyable for users.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Challenges & Thinking Outside the Box
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![alt text](image-3.png)
+Overcoming challenges, such as learning Blender for 3D modeling for the first time and integrating innovative hover effects on Three.js elements, pushed us to think outside the box. By treating the website as a dynamic game in itself, we introduced interactive elements like mini-games (e.g., tic-tac-toe) across pages, fostering deeper user engagement. These creative solutions not only addressed technical challenges but also contributed to the overall thematic coherence and user enjoyment of Sip and Play.

@@ -77,10 +77,10 @@ const Menu = () => {
                 </div>
               </div>
             </div>
-            {/* mobile ideas here!1!!!! */}
+            {/* mobile styling here */}
             <h2 className="text-fuchsia-500 text-xl mb-2 self-start md:hidden">{section}</h2>
             <div className="flex flex-col items-start relative w-full h-full mb-8 md:hidden">
-              <div className="shadow-inner w-full bg-[#DEE9D3] p-4 rounded-[50px] ">
+              <div className="shadow-inner self-center w-[80%] bg-[#DEE9D3] p-6 rounded-[50px] ">
                 <div className="text-center bg-white w-fit rounded-full overflow-hidden shadow-lg mx-auto">
                   {section === "Coffee" ? (
                     <CustomCanvas

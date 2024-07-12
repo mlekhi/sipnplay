@@ -82,21 +82,23 @@
 
 
 .dice1 {
-    background-size: cover;
-    background-attachment: fixed;
-      top: 20;
-        left: 20;
-      /* Ensures the background image stays fixed while scrolling */
-    min-height: 300vh;
-    display: flex;    
+  position: absolute;
+  top: 290px;
+  /* Adjust as per your layout */
+  left: 20px;
+  /* Adjust as per your layout */
+  min-height: 100vh;
+  display: flex;
+  z-index: -10;
 }
 
 .dice2 {
-  background-size: cover;
-  background-attachment: fixed;
-  top: 20;
-  right: 20;
-  /* Ensures the background image stays fixed while scrolling */
-  min-height: 300vh;
+  position: absolute;
+  top: 100px;
+  /* Adjust as per your layout */
+  right: 20px;
+  /* Adjust as per your layout */
+  min-height: 100vh;
   display: flex;
+  z-index: -10;
 }

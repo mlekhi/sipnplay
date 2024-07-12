@@ -3,7 +3,7 @@ import GalleryItem from "./GalleryItem"; // Assuming GalleryItem component is de
 import { FaTimes } from "react-icons/fa"; // Import FaTimes icon from react-icons
 import gameData from "./boardgames.json"; // Import JSON data (adjust path as needed)
 import "./GalleryItem.css";
-import Dice from "../../components/Canvas/Dice/Dice.js";
+import Dice from "../../components/Canvas/Dice/Dice2.js";
 
 const Gallery = () => {
   const [items, setItems] = useState([]);

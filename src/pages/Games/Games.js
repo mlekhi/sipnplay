@@ -66,7 +66,7 @@ const Gallery = () => {
 
   return (
     <div className="App-header">
-      <img src="headers/gamecatalogue.png" />
+      <img src="headers/gamecatalogue.png" className="pointer-events-none" />
       <div className="filter-options flex-row items-baseline w-full justify-around">
         <div className="search-bar">
           <input

@@ -44,7 +44,7 @@ const Menu = () => {
 
   return (
     <div className="App-header">
-      <img src="headers/menu.png" />
+      <img src="headers/menu.png" className="pointer-events-none" />
       <Boba />
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (

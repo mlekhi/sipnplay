@@ -17,8 +17,11 @@ function About() {
     <div>
       <div className="App-header">
         <div>
-          <img src="/headers/about.png" />
-          <p className="text-start text-base sm:text-xl mb-8">
+          <img
+            src="/headers/about.png"
+            className="pointer-events-none relative z-10"
+          />
+          <p className="text-start text-base sm:text-xl mb-8 relative z-10">
             Founder, Jonathan Li, shares a passion for board games, boba, and
             delicious food, so he combined them all to become Sip & Play, Park
             Slope’s first board game cafe. It is a straightforward concept, come
@@ -34,13 +37,13 @@ function About() {
             Make a Reservation!
           </a>
         </div>
-        <div className="absolute top-4 left-4 slanted bg-white p-4 pointer-events-auto z-[-10]">
+        <div className="absolute top-4 left-4 slanted bg-white p-4 pointer-events-auto">
           <TicTacToe />
         </div>
-        <div className="absolute right-4 slanted bg-white p-4 z-[-10]">
+        <div className="absolute right-4 slanted bg-white p-4">
           <TicTacToe />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col z-10 relative">
           <LeafletMap />
         </div>
       </div>

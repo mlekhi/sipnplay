@@ -9,6 +9,7 @@ const CoffeeObject = ({ path, rotate, scale }) => {
   const [hovered, setHovered] = useState(false);
   const [rotated, setRotated] = useState(false);
 
+  // Effect to set initial rotation and scale of the model
   useEffect(() => {
     if (modelRef.current) {
       modelRef.current.rotation.set(...rotate);
@@ -17,20 +18,19 @@ const CoffeeObject = ({ path, rotate, scale }) => {
     }
   }, [rotate, scale, invalidate]);
 
+  // Frame update logic for rotation animation
   useFrame(() => {
     if (hovered && !rotated) {
-      modelRef.current.rotation.y += 0.1;
+      modelRef.current.rotation.y += 0.01; // Adjust rotation speed here
       if (modelRef.current.rotation.y >= Math.PI * 10) {
         setRotated(true);
         modelRef.current.rotation.y = 0;
       }
-      if (modelRef.current) {
-        modelRef.current.rotation.y += 0.01; // Adjust rotation speed here
-        invalidate();
-      }
+      invalidate();
     }
   });
 
+  // Event handlers for pointer hover
   const handlePointerOver = () => {
     setHovered(true);
     setRotated(false);
@@ -51,7 +51,8 @@ const CoffeeObject = ({ path, rotate, scale }) => {
         scale={scale}
         rotation={rotate}
         onPointerOver={handlePointerOver}
-        onPointerOut={handlePointerOut}>
+        onPointerOut={handlePointerOut}
+      >
         <primitive object={scene.clone()} />
       </group>
     </Center>

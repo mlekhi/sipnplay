@@ -1,6 +1,7 @@
 import React from "react";
 import CoffeeCanvas from "./CoffeeCanvas";
 
+// Component to display a coffee scene using CoffeeCanvas
 const Coffee = () => {
   return (
     <>

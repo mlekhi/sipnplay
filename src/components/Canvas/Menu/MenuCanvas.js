@@ -1,50 +1,67 @@
+// React component for rendering a canvas with a 3D object and adjustable camera
 import * as THREE from "three";
 import { useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import MenuObject from "./MenuObject";
 
-// Component to move camera to capture model
+// Component to adjust camera position to capture the object properly
 const CameraAdjuster = () => {
   const { camera, scene } = useThree();
 
   useEffect(() => {
-    const box = new THREE.Box3().setFromObject(scene);
-    const size = box.getSize(new THREE.Vector3());
-    const center = box.getCenter(new THREE.Vector3());
+    const box = new THREE.Box3().setFromObject(scene); // Calculate bounding box of the scene
+    const size = box.getSize(new THREE.Vector3()); // Get size of the bounding box
+    const center = box.getCenter(new THREE.Vector3()); // Get center of the bounding box
 
-    const maxDim = Math.max(size.x, size.y, size.z);
-    const fov = camera.fov * (Math.PI / 180);
-    let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+    const maxDim = Math.max(size.x, size.y, size.z); // Get maximum dimension of the bounding box
+    const fov = camera.fov * (Math.PI / 180); // Convert camera FOV to radians
+    let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2)); // Calculate camera distance based on FOV
 
-    // Zoom out a little so object fits comfortably
-    cameraZ *= 1.5;
+    cameraZ *= 1.5; // Zoom out a little so object fits comfortably
 
-    // Move the camera up and back to catch object at angle
+    // Move the camera up and back to capture the object at an angle
     camera.position.set(
       center.x,
       center.y + cameraZ * 0.5, // Move up by half the cameraZ distance
       center.z + cameraZ
     );
 
-    // camera.lookAt(center);
+    // Point the camera at a slight downward angle
     camera.lookAt(center.x, center.y - size.y * 0.2, center.z);
-    camera.updateProjectionMatrix();
-  }, [camera, scene]);
+    camera.updateProjectionMatrix(); // Update camera projection matrix
+  }, [camera, scene]); // Dependencies for useEffect hook
 
-  return null;
+  return null; // Render nothing in the DOM
 };
 
-const MenuCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
+// Component to render the canvas with a 3D object and adjustable camera
+const MenuCanvas = ({
+  path,
+  rotate = [0, 0, 0],
+  scale = 1,
+  auto_camera = true,
+}) => {
   return (
     <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]">
       <Canvas frameloop="demand">
-        {/* lights for object to show colors */}
-        <ambientLight intensity={2} />
-        <directionalLight position={[2, 2, 2]} intensity={5} />
-        <MenuObject path={path} rotate={rotate} scale={scale} />
-        {auto_camera && <CameraAdjuster />}
-        <OrbitControls makeDefault enablePan={false} enableZoom={false} enableRotate={false} />
+        {" "}
+        {/* Canvas for rendering Three.js scene */}
+        <ambientLight intensity={2} />{" "}
+        {/* Ambient light for scene illumination */}
+        <directionalLight position={[2, 2, 2]} intensity={5} />{" "}
+        {/* Directional light for shadows */}
+        <MenuObject path={path} rotate={rotate} scale={scale} />{" "}
+        {/* Render the 3D object */}
+        {auto_camera && <CameraAdjuster />}{" "}
+        {/* Conditionally adjust camera position */}
+        <OrbitControls
+          makeDefault
+          enablePan={false}
+          enableZoom={false}
+          enableRotate={false}
+        />{" "}
+        {/* Orbit controls */}
       </Canvas>
     </div>
   );

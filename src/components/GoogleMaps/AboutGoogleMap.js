@@ -14,7 +14,7 @@ const center = {
 const AboutGoogleMap = () => {
   return (
     <>
-      <div className="text-lg">Find us here!</div>
+      <div className="text-lg mb-2">Find us here!</div>
       <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
           <Marker position={center} />

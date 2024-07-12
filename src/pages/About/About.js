@@ -40,12 +40,12 @@ function About() {
         <div className="absolute top-4 left-4 slanted bg-white p-4 pointer-events-auto">
           <TicTacToe />
         </div>
-        <div className="absolute right-4 slanted bg-white p-4">
+        <div className="absolute right-[20px] top-[1100px] slanted2 bg-white p-4">
           <TicTacToe />
         </div>
-        <div className="flex flex-col z-10 relative">
-          <LeafletMap />
-        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center z-10 relative">
+        <LeafletMap />
       </div>
     </div>
   );

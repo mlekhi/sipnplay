@@ -1,7 +1,7 @@
 import React from "react";
 import Insta from "./InstagramEmbed.js";
 import TicTacToe from "../../components/TicTacToe/TicTacToe";
-import AboutGoogleMap from "../../components/GoogleMaps/AboutGoogleMap";
+import LeafletMap from "../../components/Map/LeafletMap";
 
 function About() {
   const styles = {
@@ -32,13 +32,10 @@ function About() {
             Make a Reservation!
           </a>
         </div>
-        <div className="flex flex-col lg:flex-row justify-around items-center p-4 max-w-[380px] overflow-hidden lg:w-full h-full">
-          <div>
-            <TicTacToe />
-          </div>
-          <div className="mt-10 lg:mt-0">
-            {/* import map here */}
-            <AboutGoogleMap />
+        <div className="flex flex-col lg:flex-row justify-around items-center p-4 max-w-[380px] lg:max-w-full overflow-hidden lg:w-full h-full">
+          <TicTacToe />
+          <div className="flex flex-col mt-10 lg:mt-0">
+            <LeafletMap />
           </div>
         </div>
       </div>

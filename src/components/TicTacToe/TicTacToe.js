@@ -78,7 +78,7 @@ const TicTacToe = () => {
 
   return (
     <>
-      <div className="flex flex-col mx-auto ">
+      <div className="flex flex-col ">
         <div className="text-lg text-[#555]">{status}</div>
         <div className="grid grid-cols-3 gap-2 bg-[#DEE9D3] mt-2 min-w-[400px] min-h-[400px]">
           {Array.from({ length: 9 }).map((_, index) => (

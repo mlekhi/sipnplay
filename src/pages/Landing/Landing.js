@@ -6,7 +6,7 @@ import "./Landing.css";
 function Landing() {
   return (
     <div>
-      <div className="App-header2">
+      <div className="App-header2 bg-cover bg-center" style={{ backgroundImage: "url('backgroundimage.png')" }}>
         <img src="logo512.png" className="logo" alt="Sip & Play Logo" />
         <div id="dice" className="dice">
           <Dice rotate={[1, 1, 1]} />

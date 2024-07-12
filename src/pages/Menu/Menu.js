@@ -44,13 +44,12 @@ const Menu = () => {
 
   return (
     <div className="App-header">
-      {/* big letter font */}
       <img src="headers/menu.png" />
       <Boba />
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
           <div key={section} className="w-full">
-            <h2 className="text-fuchsia-500 text-3xl mb-2 self-start hidden md:flex">
+            <h2 className="font-semibold text-3xl mb-2 self-start hidden md:flex">
               {section}
             </h2>
             <div className=" flex-col items-start relative w-full mb-8 hidden md:flex">

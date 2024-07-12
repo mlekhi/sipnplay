@@ -6,7 +6,7 @@ import "./About.css";
 function About() {
   const styles = {
     link: {
-      fontSize: "20pt",
+      fontSize: "18pt",
       textDecoration: "none",
       transition: "transform 0.2s ease",
       display: "inline-block", // Ensures inline block display for correct hover effect
@@ -34,7 +34,7 @@ function About() {
             Make a Reservation!
           </a>
         </div>
-        <div className="absolute top-4 left-4 slanted bg-white p-4 z-[-10]">
+        <div className="absolute top-4 left-4 slanted bg-white p-4 pointer-events-auto z-[-10]">
           <TicTacToe />
         </div>
         <div className="absolute right-4 slanted bg-white p-4 z-[-10]">

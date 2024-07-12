@@ -87,7 +87,7 @@ const TicTacToe = () => {
                 <img
                   alt="TicTacToe square"
                   src={X}
-                  className="md:w-32 md:h-32 bg-white "
+                  className="w-32 h-32 bg-white "
                   value={index}
                   key={index}
                 />
@@ -95,7 +95,7 @@ const TicTacToe = () => {
                 <img
                   alt="TicTacToe square"
                   src={O}
-                  className="md:w-32 md:h-32  bg-white "
+                  className="w-32 h-32  bg-white "
                   value={index}
                   key={index}
                 />

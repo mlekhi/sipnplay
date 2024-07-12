@@ -32,7 +32,7 @@ function About() {
             Make a Reservation!
           </a>
         </div>
-        <div className="flex flex-col lg:flex-row justify-around items-center p-4 w-full h-full">
+        <div className="flex flex-col lg:flex-row justify-around items-center p-4 max-w-[380px] overflow-hidden lg:w-full h-full">
           <div>
             <TicTacToe />
           </div>

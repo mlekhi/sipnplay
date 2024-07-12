@@ -1,17 +1,13 @@
-@import url('./fonts/fonts.css');
-
 body {
   margin: 0;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
 h1 {
-  font-family: 'PurpleFont', sans-serif;
   font-size: 100px;
-  letter-spacing: 10px;
   background: linear-gradient(to bottom, #44ff33, #0d5d96);
   -webkit-background-clip: text;
   background-clip: text;

@@ -34,14 +34,19 @@ const CameraAdjuster = () => {
   return null;
 };
 
-const MenuCanvas = ({ path, scale = 1, auto_camera = true }) => {
+const MenuCanvas = ({
+  path,
+  rotate = [1, 1, 1],
+  scale = 1,
+  auto_camera = true,
+}) => {
   return (
     <div style={{ width: "200px", height: "200px" }}>
       <Canvas frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[2, 2, 2]} intensity={2} />
         <Suspense fallback={<CanvasLoader />}>
-          <MenuObject path={path} scale={scale} />
+          <MenuObject path={path} scale={scale} rotate={rotate} />
           {auto_camera && <CameraAdjuster />}
           <OrbitControls
             makeDefault

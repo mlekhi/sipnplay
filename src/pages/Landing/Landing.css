@@ -24,7 +24,7 @@
 .dice> :nth-child(3) {
     position: absolute;
     top: 400px;
-    left: 10px;
+    right: 200px;
 }
 
 .dice> :nth-child(4) {

@@ -9,10 +9,10 @@ function Landing() {
       <div className="App-header2">
         <img src="logo512.png" className="logo" />
         <div id="dice" className="dice">
-          <Dice />
-          <Dice />
-          <Dice />
-          <Dice />
+          <Dice rotate={[1, 1, 1]} />
+          <Dice rotate={[1, -1, 1]} />
+          <Dice rotate={[-1, 1, 1]} />
+          <Dice rotate={[1, 1, -1]} />
         </div>
       </div>
       <div className="App-header">

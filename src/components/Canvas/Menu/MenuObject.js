@@ -19,7 +19,7 @@ const MenuObject = ({ path, rotate, scale }) => {
 
   useFrame(() => {
     if (hovered && !rotated) {
-      modelRef.current.rotation.y += 0.3;
+      modelRef.current.rotation.y += 0.1;
       if (modelRef.current.rotation.y >= Math.PI * 2) {
         setRotated(true);
         modelRef.current.rotation.y = 0;

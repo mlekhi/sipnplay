@@ -36,7 +36,7 @@ const CameraAdjuster = () => {
 
 const MenuCanvas = ({ path, rotate = [0, 0, 0], scale = 1, auto_camera = true }) => {
   return (
-    <div style={{ width: "200px", height: "200px" }}>
+    <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]">
       <Canvas frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[2, 2, 2]} intensity={2} />

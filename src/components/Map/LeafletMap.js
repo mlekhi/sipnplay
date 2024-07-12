@@ -5,7 +5,8 @@ import L from "leaflet";
 // Fix for default marker icon issue
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
   shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
 });
@@ -18,8 +19,12 @@ const LeafletMap = () => {
   return (
     <>
       <div className="text-lg mb-2">Find us here!</div>
-      <div className="w-[400px] h-[400px]">
-        <MapContainer center={center} zoom={15} style={{ height: "400px", width: "400px" }}>
+      <div className="h-[400px]">
+        <MapContainer
+          center={center}
+          zoom={15}
+          style={{ height: "400px", width: "400px" }}
+        >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -28,7 +33,12 @@ const LeafletMap = () => {
             <Popup>
               <div className="flex flex-col items-center">
                 <div>471 5th Ave. Brooklyn, NY 11215</div>
-                <a className="underline" target="_blank" rel="noreferrer" href={googleURL}>
+                <a
+                  className="underline"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={googleURL}
+                >
                   Google Maps
                 </a>
               </div>

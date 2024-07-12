@@ -1,15 +1,19 @@
-.event-card {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.link {
+    transition: transform 0.2s ease-in-out;
 }
 
-.event-title {
-    margin-bottom: 10px;
+.link:hover {
+    transform: scale(1.1);
 }
 
-.event-info {
-    margin: 5px 0;
+.boba-container {
+    display: none;
+    /* Display by default */
+}
+
+/* Media query for screens larger than 768px (typically tablets and desktops) */
+@media (min-width: 768px) {
+    .boba-container {
+        display: block;
+    }
 }

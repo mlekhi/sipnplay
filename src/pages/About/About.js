@@ -37,15 +37,15 @@ function About() {
             Make a Reservation!
           </a>
         </div>
-        <div className="absolute top-4 left-4 slanted bg-white p-4 pointer-events-auto">
+        <div className="absolute top-[50px] left-4 slanted bg-white p-4 pointer-events-auto">
           <TicTacToe />
         </div>
-        <div className="absolute right-[20px] top-[1100px] slanted2 bg-white p-4">
+        <div className="absolute right-[20px] top-[400px] slanted2 bg-white p-4">
           <TicTacToe />
         </div>
-      </div>
-      <div className="flex flex-col justify-center items-center z-10 relative">
-        <LeafletMap />
+        <div className="flex flex-col justify-center items-center z-10 relative pt-20">
+          <LeafletMap />
+        </div>
       </div>
     </div>
   );

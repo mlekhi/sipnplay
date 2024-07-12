@@ -79,15 +79,15 @@ const TicTacToe = () => {
   return (
     <>
       <div className="flex flex-col mx-auto ">
-        <div className="text-lg">{status}</div>
-        <div className="grid grid-cols-3 gap-2 bg-[#DEE9D3] mt-2">
+        <div className="text-lg text-[#555]">{status}</div>
+        <div className="grid grid-cols-3 gap-2 bg-[#DEE9D3] mt-2 min-w-[400px] min-h-[400px]">
           {Array.from({ length: 9 }).map((_, index) => (
             <div key={index}>
               {board[index] === "X" ? (
                 <img
                   alt="TicTacToe square"
                   src={X}
-                  className="w-32 h-32 bg-white "
+                  className="md:w-32 md:h-32 bg-white "
                   value={index}
                   key={index}
                 />
@@ -95,7 +95,7 @@ const TicTacToe = () => {
                 <img
                   alt="TicTacToe square"
                   src={O}
-                  className="w-32 h-32  bg-white "
+                  className="md:w-32 md:h-32  bg-white "
                   value={index}
                   key={index}
                 />

@@ -16,9 +16,9 @@ function About() {
   return (
     <div>
       <div className="App-header">
-        <div className="w-full flex flex-col p-5 items-start bg-[#DEE9D3] shadow-inner rounded-3xl">
-          <h1 className="text-4xl mb-5">Our Story</h1>
-          <p className="text-start text-xl mb-2">
+        <div className="w-full flex flex-col p-8 items-start bg-[#DEE9D3] shadow-inner rounded-3xl">
+          <h1 className="text-4xl mb-10">Our Story</h1>
+          <p className="text-start text-base sm:text-xl mb-8">
             Founder, Jonathan Li, shares a passion for board games, boba, and delicious food, so he
             combined them all to become Sip & Play, Park Slope’s first board game cafe. It is a
             straightforward concept, come in with your friends and family to play any board game
@@ -32,11 +32,11 @@ function About() {
             Make a Reservation!
           </a>
         </div>
-        <div className="flex flex-row justify-around items-center p-4 w-full h-full">
+        <div className="flex flex-col lg:flex-row justify-around items-center p-4 w-full h-full">
           <div>
             <TicTacToe />
           </div>
-          <div>
+          <div className="mt-10 lg:mt-0">
             {/* import map here */}
             <AboutGoogleMap />
           </div>

@@ -18,22 +18,22 @@ function About() {
       <div className="App-header">
         <div>
           <img
+            fetchpriority="high"
+            alt="About header text"
             src="/headers/about.png"
             className="pointer-events-none relative z-10"
           />
           <p className="text-start text-base sm:text-xl mb-8 relative z-10">
-            Founder, Jonathan Li, shares a passion for board games, boba, and
-            delicious food, so he combined them all to become Sip & Play, Park
-            Slope’s first board game cafe. It is a straightforward concept, come
-            in with your friends and family to play any board game from our
-            library of 300+ games! We hope when you visit, you also enjoy our
-            coffee, espresso, boba, sandwiches, and snacks!
+            Founder, Jonathan Li, shares a passion for board games, boba, and delicious food, so he
+            combined them all to become Sip & Play, Park Slope’s first board game cafe. It is a
+            straightforward concept, come in with your friends and family to play any board game
+            from our library of 300+ games! We hope when you visit, you also enjoy our coffee,
+            espresso, boba, sandwiches, and snacks!
           </p>
           <a
             style={styles.link}
             className="text-lg hover:scale-110 "
-            href="https://www.exploretock.com/sipnplay"
-          >
+            href="https://www.exploretock.com/sipnplay">
             Make a Reservation!
           </a>
         </div>

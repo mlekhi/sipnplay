@@ -26,6 +26,7 @@ For "Sip and Play," the branding revolves around a playful aesthetic highlighted
 ## SEO
 
 ![alt text](image-1.png)
+
 SEO played a crucial role in maximizing visibility and accessibility for Sip and Play. We implemented strategies focused on keyword relevance, efficient code for fast loading speeds, and ensuring crawlability through sitemaps and structured data. Crafting effective meta tags further enhanced our search engine performance, driving organic traffic and improving overall user engagement. These efforts were instrumental in positioning Sip and Play prominently within search engine results, reaching a broader audience effectively.
 
 ## User Experience & Usability

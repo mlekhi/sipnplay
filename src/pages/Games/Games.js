@@ -27,7 +27,9 @@ const Gallery = () => {
       return searchQuery
         ? title.includes(searchQuery.toLowerCase()) &&
             (selectedTags.length === 0 ||
-              selectedTags.every((tag) => item.label && item.label.includes(tag)))
+              selectedTags.every(
+                (tag) => item.label && item.label.includes(tag)
+              ))
         : selectedTags.length === 0 ||
             selectedTags.every((tag) => item.label && item.label.includes(tag));
     });
@@ -64,7 +66,7 @@ const Gallery = () => {
 
   return (
     <div className="App-header">
-      <h1>Games Catalogue</h1>
+      <img src="headers/gamecatalogue.png" />
       <div className="filter-options flex-row items-baseline w-full justify-around">
         <div className="search-bar">
           <input
@@ -85,8 +87,11 @@ const Gallery = () => {
             <button
               key={label}
               value={label}
-              className={`filter-button p-2 ${selectedTags.includes(label) ? "active" : ""}`}
-              onClick={(e) => handleTagClick(e)}>
+              className={`filter-button p-2 ${
+                selectedTags.includes(label) ? "active" : ""
+              }`}
+              onClick={(e) => handleTagClick(e)}
+            >
               {label}
             </button>
           ))}

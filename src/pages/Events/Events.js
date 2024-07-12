@@ -13,7 +13,7 @@ const UpcomingEvents = () => {
   return (
     <div className="App-header">
       {/* <h1>Upcoming Events</h1> */}
-      <img src='/headers/upcomingevents.png' alt='Upcoming Events' class='-rotate-[1deg]'></img>
+      <img src='/headers/upcomingevents.png' alt='Upcoming Events' className='-rotate-[1deg]'></img>
 
       <p>
         Here at Sip & Play, we host{" "}
@@ -34,8 +34,8 @@ const UpcomingEvents = () => {
             </div>
            
             <div className="text-left shadow-inner md:w-[85%] lg:w-[90%] bg-[#DEE9D3] p-3 pl-10 pt-[6%] rounded-[50px] h-[220px] basis-5/6">
-              <h3 className="event-title font-medium">{event.title}</h3>
-              <h3 className="event-info font-medium text-lg">{event.time}</h3>
+              <h3 className="event-title font-semibold text-[#577335]">{event.title.toUpperCase()}</h3>
+              <h3 className="event-info font-medium text-lg text-[#577335]">{event.time}</h3>
               <p className="event-info">{event.description}</p>
             </div> 
             

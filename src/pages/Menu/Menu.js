@@ -49,7 +49,7 @@ const Menu = () => {
       <h1 className="menu-title">Menu</h1>
       {Object.keys(menuItems).length > 0 ? (
         Object.entries(menuItems).map(([section, items]) => (
-          <div key={section}>
+          <div key={section} className="w-full">
             <h2 className="text-fuchsia-500 text-3xl mb-2 self-start">{section}</h2>
             <div className="flex flex-col items-start relative w-full mb-8">
               <div className="shadow-inner md:w-[85%] lg:w-[91%] bg-[#DEE9D3] p-3 pl-10 rounded-l-[50px] pr-[100px] h-[220px]">

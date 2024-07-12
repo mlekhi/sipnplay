@@ -26,22 +26,15 @@ const Gallery = () => {
   // Function to filter items based on search query and selected tags
   const filterItems = () => {
     let filtered = items.filter((item) => {
-      const title = item.title.toLowerCase(); // Convert title to lowercase for case-insensitive search
-      return (
-        // Filter logic:
-        // - Include item if searchQuery matches title
-        // - Include item if selectedTags is empty or matches item's label
-        searchQuery
-          ? title.includes(searchQuery.toLowerCase()) &&
-              (selectedTags.length === 0 ||
-                selectedTags.every(
-                  (tag) => item.label && item.label.includes(tag)
-                ))
-          : selectedTags.length === 0 ||
+      const title = item.title.toLowerCase();
+      return searchQuery
+        ? title.includes(searchQuery.toLowerCase()) &&
+            (selectedTags.length === 0 ||
               selectedTags.every(
                 (tag) => item.label && item.label.includes(tag)
-              )
-      );
+              ))
+        : selectedTags.length === 0 ||
+            selectedTags.every((tag) => item.label && item.label.includes(tag));
     });
     setFilteredItems(filtered); // Update filteredItems state with filtered results
   };
@@ -81,14 +74,12 @@ const Gallery = () => {
   // JSX structure for rendering the component
   return (
     <div className="App-header">
-      {" "}
-      {/* Main container with App-header class */}
       <img
+        fetchpriority="high"
+        alt="Games catalogue header text"
         src="headers/gamecatalogue.png"
         className="pointer-events-none"
-      />{" "}
-      {/* Image header */}
-      {/* Filter options section */}
+      />
       <div className="filter-options flex flex-col md:flex-row items-center w-full justify-between">
         {/* Search bar */}
         <div className="search-bar">
@@ -117,7 +108,7 @@ const Gallery = () => {
               }`}
               onClick={(e) => handleTagClick(e)}
             >
-              {label} {/* Display label as button text */}
+              {label}
             </button>
           ))}
         </div>

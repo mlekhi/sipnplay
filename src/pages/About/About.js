@@ -1,6 +1,7 @@
 import React from "react";
 import Insta from "./InstagramEmbed.js";
 import TicTacToe from "../../components/TicTacToe/TicTacToe";
+import AboutGoogleMap from "../../components/GoogleMaps/AboutGoogleMap";
 
 function About() {
   const styles = {
@@ -32,12 +33,12 @@ function About() {
           </a>
         </div>
         <div className="flex flex-row justify-around items-center p-4 w-full">
-          <div className="tictactoe">
+          <div>
             <TicTacToe />
           </div>
-          <div className="map">
+          <div>
             {/* import map here */}
-            google map
+            <AboutGoogleMap />
           </div>
         </div>
       </div>

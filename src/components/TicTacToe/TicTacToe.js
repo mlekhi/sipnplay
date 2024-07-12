@@ -79,9 +79,10 @@ const TicTacToe = () => {
   return (
     <>
       <div className="flex flex-col mx-auto">
-        <div className="status text-lg">{status}</div>
+        <div className="text-lg">{status}</div>
         {(winner || status === "It's a tie!") && (
           <button
+            key="again"
             className="my-2 px-4 py-2 bg-[#DEE9D3] shadow-inner text-white font-bold rounded"
             onClick={resetGame}>
             Play Again!
@@ -89,7 +90,7 @@ const TicTacToe = () => {
         )}
         <div className="grid grid-cols-3 gap-2 bg-[#DEE9D3] border-none">
           {Array.from({ length: 9 }).map((_, index) => (
-            <>
+            <div key={index}>
               {board[index] === "X" ? (
                 <img
                   alt="TicTacToe square"
@@ -109,20 +110,20 @@ const TicTacToe = () => {
               ) : (
                 <div
                   alt="TicTacToe square"
-                  src={null}
                   className="w-32 h-32 border bg-white  text-2xl font-bold focus:outline-none"
                   key={index}>
                   {isXTurn ? (
                     <button
                       className="w-full h-full bg-white"
                       value={index}
+                      key={index}
                       onClick={() => handleClick(index)}></button>
                   ) : (
-                    <button className="w-full h-full bg-white" value={index}></button>
+                    <button className="w-full h-full bg-white" key={index} value={index}></button>
                   )}
                 </div>
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>
